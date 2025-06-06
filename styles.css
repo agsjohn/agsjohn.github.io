@@ -4,56 +4,237 @@
   body {
     background-color: #f8f9fa;
     color: #212529;
-    padding: 2rem;
   }
   header {
-    text-align: center;
-    margin-bottom: 2rem;
+    height: 4rem;
+    width: 100%;
+    position: fixed;
+    top: 0rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 25rem;
+    padding-right: 25rem;
+    background-color: white;
+    border-bottom: solid 1px black;
   }
-  header h1 {
-    font-size: 2.5rem;
+  header a{
+    transition: color 0.5s linear;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
   }
-  header p {
-    font-size: 1.2rem;
-    color: #6c757d;
+  header a:hover{
+    color: slateblue;
+    font-weight: bold;
   }
-  section {
-    max-width: 800px;
-    margin: 0 auto 2rem;
-    padding: 1rem;
-    background: #fff;
+  .presentaion{
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  .presentaion div{
+    max-width: 60rem;
+    margin-right: 30rem;
+    margin-top: 16rem;
+    margin-bottom: 26rem;
     border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   }
-  h2 {
+  .presentaion h1{
+    font-size: 4rem;
+  }
+  .presentaion h2 {
     margin-bottom: 1rem;
     color: #343a40;
   }
-  ul {
-    list-style: none;
+  .presentaion p{
+    font-size: 1.5rem;
   }
-  ul li {
-    margin-bottom: 1rem;
-  }
-  a {
-    color: #0d6efd;
+  .buttonLink {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    background: slateblue;
+    color: white;
+    border-radius: 5px;
     text-decoration: none;
   }
-  a:hover {
-    text-decoration: underline;
+  #workexperience{
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    border-top: solid 1px black;
+    text-align: center;
+  }
+  #workexperience h1{
+    font-size: 3rem;
+  }
+  #workexperience h2{
+    padding-bottom: 0.3rem;
+    font-size: 1.2rem;
+  }
+  #workexperience h3{
+    padding-bottom: 0.3rem;
+    font-size: 1.1rem;
+    color: slateblue;
+  }
+  #workexperience h4{
+    padding-bottom: 0.3rem;
+    color: rgb(68, 68, 68);
+  }
+  #workexperience ul{
+    list-style: none;
+    margin-top: 1rem;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #workexperience li{
+    height: fit-content;
+    padding: 1rem;
+    max-width: 30rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  #projects {
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    border-top: solid 1px black;
+    text-align: center;
+  }
+  #projects h1{
+    font-size: 3rem;
+  }
+  #projects ul{
+    list-style: none;
+    margin-top: 1rem;
+    text-align: start;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  #projects li{
+    height: fit-content;
+    padding: 1rem;
+    max-width: 30rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .text{
+    padding-bottom: 0.5rem;
+  }
+  .tecnologies{
+    padding-top: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
+  }
+  .tecnologies p{
+    color: white;
+    padding: 0.3rem;
+    background-color: #8b8b8b;
+    border-radius: 100px;
+  }
+  .title{
+    padding-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+  }
+  #contact {
+    border-top: 1px solid #000;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contactDiv{
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-radius: 8px;
+  }
+  #contact div{
+    width: 50rem;
+    padding: 1rem;
+  }
+  #contact ul li div{
+    width: fit-content;
+  }
+  #contact ul{
+    width: 50rem;
+    padding: 1rem;
+    list-style: none;
+    display: grid;
+    grid: auto auto / auto auto;
+  }
+  #contact li{
+    display: flex;
+    align-items: center;
+  }
+  #contact h1{
+    text-align: center;
+    font-size: 3rem;
+    padding-bottom: 1rem;
+  }
+  #contact h2 {
+    text-align: center;
+  }
+  #contact img{
+    height: 3rem;
+    width: 3rem;
+  }
+  #contact p {
+    font-size: 1rem;
+    color: #6c757d;
   }
   footer {
+    border-top: solid black 2px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
     margin-top: 2rem;
     font-size: 0.9rem;
     color: #6c757d;
   }
-  .btn {
+  .icon{
     display: inline-block;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    background: #0d6efd;
-    color: white;
-    border-radius: 5px;
-    text-decoration: none;
+    width: 40px;
+    height: 40px;
+    background-color: rgb(231, 231, 231);
+    border-radius: 50%;
+    border: solid 1px black;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .footerName{
+    text-align: start;
+  }
+  .footerPrincipalName{
+    color: black;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .icons{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  .linkedinIcon {
+    background-image: url("files/linkedin.png");
+  }
+  .githubIcon{
+    background-image: url("files/github.png");
+  }
+  .gmailIcon{
+    background-image: url("files/gmail.png");
   }
