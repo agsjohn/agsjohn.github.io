@@ -113,7 +113,7 @@ header div{
   padding-right: 25rem;
 }
 header a{
-  transition: color 0.5s linear;
+  transition: color 0.3s;
   font-weight: bold;
   text-decoration: none;
 }
@@ -415,10 +415,7 @@ footer {
   align-items: center;
   justify-content: center;
   gap: 6.25rem;
-  padding-left: 20rem;
-  padding-right: 20rem;
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+  height: 8rem;
   font-size: 0.9rem;
   color: #6c757d;
 }
@@ -429,6 +426,12 @@ footer {
   background-color: rgb(231, 231, 231);
   border: solid 0.1rem black;
   color: white;
+}
+.footerWhite .icon:hover{
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 1.9rem;
+  box-shadow: 0 0 1rem #a00bdb;
 }
 .footerWhite .footerPrincipalName{
   color: black;
@@ -442,6 +445,12 @@ footer {
   filter: invert(100%);
   color: black;
 }
+.footerBlack .icon:hover{
+  width: 2.6rem;
+  height: 2.6rem;
+  background-size: 1.9rem;
+  box-shadow: 0 0 1rem #5edb0b;
+}
 .footerBlack .footerPrincipalName{
   color: white;
 }
@@ -453,6 +462,7 @@ footer {
   background-size: 1.875rem;
   background-repeat: no-repeat;
   background-position: center;
+  transition: 0.3s;
 }
 .footerName{
   text-align: start;
@@ -464,6 +474,8 @@ footer {
 .icons{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  width: 10rem;
   gap: 1rem;
 }
 .linkedinIcon {
