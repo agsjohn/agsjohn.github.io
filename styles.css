@@ -16,7 +16,7 @@
   margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;
 }
 html {
-  scroll-behavior: smooth; /* Enable smooth scrolling */
+  scroll-behavior: smooth; 
 }
 body{
   transition: color 0.5s linear;
@@ -38,6 +38,41 @@ body{
   color: white;
 }
 
+.bg-grid {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 50px 50px;
+  background-image:
+    linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-glow {
+  position: fixed;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(130, 8, 178, 0.15) 0%, rgba(79, 70, 229, 0.05) 50%, transparent 70%);
+  filter: blur(60px);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.bg-glow.top-right {
+  top: -20%;
+  right: -20%;
+}
+
+.bg-glow.bottom-left {
+  bottom: -20%;
+  left: -20%;
+}
+
 
 header {
   height: 4rem;
@@ -50,6 +85,7 @@ header {
   align-items: center;
   justify-content: right;
   padding-right: 3rem;
+  z-index: 10; 
 }
 .headerWhite{
   background-color: white;
@@ -96,15 +132,22 @@ header a:hover{
 .bodyWhite #themeToggle{
   background-image: url("files/moon.png");
   border: 0.12rem black solid;
+  transition: 0.3s;
+}
+.bodyWhite #themeToggle:hover{
+  cursor: pointer;
+  box-shadow: 0 0 1rem #8208b2;
 }
 .bodyBlack #themeToggle{
   background-image: url("files/sun.png");
   background-size: 1.2rem;
   border: 0.12rem black solid;
   filter: invert(100%);
+  transition: 0.3s;
 }
-#themeToggle:hover{
+.bodyBlack #themeToggle:hover{
   cursor: pointer;
+  box-shadow: 0 0 1rem #24b208;
 }
 
 
@@ -156,6 +199,13 @@ header a:hover{
   border-radius: 0.6rem;
   border: 0.1rem solid slateblue;
   text-decoration: none;
+  transition: 0.3s;
+}
+.buttonLink:hover {
+  display: inline-block;
+  font-size: 1.3rem;
+  padding: 0.6rem 1.1rem;
+  box-shadow: 0 0.2rem 1rem #8208b2;
 }
 
 
@@ -166,6 +216,7 @@ header a:hover{
 }
 .workWhite{
   border-top: solid 0.1rem black;
+  background-color: white;
 }
 .workWhite h4{
   color: rgb(68, 68, 68);
@@ -296,10 +347,11 @@ header a:hover{
 }
 .contactWhite{
   border-top: 0.1rem solid #000;
+  background-color: white;
 }
 .contactWhite .contactDiv{
   background: #fff;
-  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.05);
+  box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
 }
 .contactBlack{
   border-top: 0.1rem solid white;
@@ -310,7 +362,7 @@ header a:hover{
 }
 .contactBlack .contactDiv{
   background-color: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0rem 0.5rem rgba(255, 255, 255, 0.15);
 }
 .contactDiv{
   border-radius: 0.5rem;
