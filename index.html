@@ -6,32 +6,36 @@
   <title>João Vitor Martins da Silva | Portfólio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
 </head>
-<body>
-  <header>
-    <a href="">Início</a>
-    <!-- <a href="skills">Habilidades</a> -->
-    <a href="#workexperience">Experiência</a>
-    <!-- <a href="#education">Formação Acadêmica</a> -->
-    <a href="#projects">Projetos</a>
-    <a href="#contact">Contato</a>
+<body class="bodyBlack">
+  <header id="mainHeader" class="headerBlack">
+    <div>
+      <a href="#presentation">Início</a>
+      <!-- <a href="skills">Habilidades</a> -->
+      <a href="#workexperience">Experiência</a>
+      <!-- <a href="#education">Formação Acadêmica</a> -->
+      <a href="#projects">Projetos</a>
+      <a href="#contact">Contato</a>
+    </div>
+    <button id="themeToggle" onclick="trocarCor()"></button>
   </header>
 
   <!-- <section id="skills">
   </section> -->
 
-  <section class="presentaion">
+  <section id="presentation" class="presentationBlack">
     <div>
       <p>Olá, me chamo </p>
       <h1>João Vitor Martins</h1>
       <h2>Desenvolvedor Backend e Mobile | Java • Flutter • MySQL</h2>
-      <p>Estudante de Ciência da Computação 3º semestre, formado Técnico em Informática. Estou na busca de me tornar um desenvolvedor de software.</p>
+      <p class="presentatinoText">Estudante de Ciência da Computação 3º semestre, formado Técnico em Informática. Estou na busca de me tornar um desenvolvedor de software.</p>
       <a href="#contact" class="buttonLink">Entre em contato</a>
       <a href="files/CV_JoaoVitorM_Dev.pdf" class="buttonLink" download>Baixar Currículo</a>
     </div>
   </section>
 
-  <section id="workexperience">
+  <section id="workexperience" class="workBlack">
     <h1>Experiência Profissional</h1>
     <ul>
       <li>
@@ -48,7 +52,7 @@
   <!-- <section id="education">
   </section> -->
 
-  <section id="projects">
+  <section id="projects" class="projectsBlack">
     <h1>Principais Projetos</h1>
     <ul>
       <li>
@@ -59,17 +63,26 @@
           <p>Java</p>
           <p>MySQL</p>
           <p>Git</p>
+          <p>GitHub</p>
         </div>
       </li>
       <li>
         <p class="title">FURIA ChatBot</p>
         <p class="text">Aplicativo mobile em Flutter para fãs do time de CS2 da FURIA. Oferece uma experiência interativa com informações sobre jogadores, resultados de eventos e partidas recentes, seção de perguntas frequentes (FAQ) e um quiz temático.</p>
         <a href="https://github.com/agsjohn/desafio_FURIA" target="_blank">Ver no GitHub</a>
+        <div class="tecnologies">
+          <p>Flutter</p>
+          <p>Dart</p>
+          <p>JSON</p>
+          <p>Git</p>
+          <p>GitHub</p>
+          <p>GitHub Actions (CI/CD)</p>
+        </div>
       </li>
     </ul>
   </section>
 
-  <section id="contact">
+  <section id="contact" class="contactBlack">
     <h1>Entre em contato</h1>
     <div class="contactDiv">
       <ul>
@@ -105,7 +118,7 @@
     </div>
   </section>
   
-  <footer>
+  <footer id="mainFooter" class="footerBlack">
     <div class="footerName">
       <p class="footerPrincipalName">João Vitor Martins</p>
       <p>Desenvolvedor Backend e Mobile</p>
