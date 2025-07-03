@@ -29,7 +29,7 @@ body{
 }
 
 .bodyWhite {
-  background-color: #f8f9fa;
+  background-color: rgb(230, 230, 230);
   color: #000000;
 }
 
@@ -40,7 +40,7 @@ body{
 
 .bodyBlack {
   background-color: rgb(25, 25, 25);
-  color: #ffffff;
+  color: white;
 }
 
 .bodyBlack a{
@@ -87,17 +87,92 @@ body{
 
 /* HEADER */
 header {
-  height: 4rem;
+  display: flex;
+  background-color: #2c2c30;
   width: 100%;
   position: fixed;
-  top: 0rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+  border-bottom: 1px solid rgb(158, 158, 158);
+}
+
+header svg{
+  display: flex;
+  fill: white;
+  width: 2rem;
+  height: 2rem;
+}
+
+.headerWhite svg{
+  filter: invert();
+}
+
+.headerBlack svg{
+  filter: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 2rem; 
+  height: 100%;
+}
+
+.nav > a {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.nav>a:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.nav h2{
+  font-size: 1.3rem;
+  padding: 0; 
+  margin: 0;
+  position: relative;
+}
+
+.nav a h2::after{
+  content: '';
+  background-color: slateblue;
+  border-radius: 10rem;
+  height: 0.1rem;
+  width: 0;
+  position: absolute;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav a h2:hover::after{
+  width: 100%;
+}
+
+.header-spacer, .header-right-content {
+  flex: 1; 
   display: flex;
   align-items: center;
-  justify-content: right;
-  padding-right: 3rem;
-  z-index: 10; 
+}
+
+.header-right-content {
+  justify-content: flex-end;
+}
+
+.menu-button{
+  display: none;
 }
 
 .headerWhite{
@@ -118,18 +193,6 @@ header {
   color: white;
 }
 
-header div{
-  height: 4rem;
-  width: 100%;
-  top: 0rem;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 25rem;
-  padding-right: 25rem;
-}
-
 header a{
   transition: color 0.3s;
   font-weight: bold;
@@ -141,7 +204,13 @@ header a:hover{
   font-weight: bold;
 }
 
-#themeToggle{
+.divTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggle{
   width: 1.6rem;
   height: 1.6rem;
   border-radius: 50%;
@@ -150,42 +219,123 @@ header a:hover{
   background-position: center;
 }
 
-.bodyWhite #themeToggle{
+.bodyWhite .themeToggle{
   background-image: url("files/moon.png");
   border: 0.12rem black solid;
   transition: 0.3s;
 }
 
-.bodyWhite #themeToggle:hover{
+.bodyWhite .themeToggle:hover{
   cursor: pointer;
   box-shadow: 0 0 1rem #8208b2;
 }
 
-.bodyBlack #themeToggle{
+.bodyBlack .themeToggle{
   background-image: url("files/sun.png");
   background-size: 1.2rem;
   border: 0.12rem black solid;
-  filter: invert(100%);
+  filter: invert();
   transition: 0.3s;
 }
 
-.bodyBlack #themeToggle:hover{
+.bodyBlack .themeToggle:hover{
   cursor: pointer;
-  box-shadow: 0 0 1rem #24b208;
+  box-shadow: 0 0 1rem rgb(56, 178, 8)
+} 
+
+
+
+/* SIDEBAR */
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
+.sidebar > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar li{
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  transition: 0.3s;
+}
+
+.sidebar li:hover{
+  transform: scale(1.1);
+}
+
+.sidebar .sidebar-close{
+  padding: 1rem;
+  height: 3.5rem;
+  width: fit-content;
+  margin: 0;
+}
+
+.sidebar .sidebar-close img{
+  height: 100%;
+  filter: invert();
+}
+
+.sidebar .sidebar-login{
+  padding: 1rem;
+  height: 3.5rem;
+  width: fit-content;
+  margin: 0;
+}
+
+.sidebar .sidebar-login img{
+  height: 100%;
+  filter: invert();
+}
+
+.sidebar a{
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  width: 100%;
+}
+
+.headerBlack .sidebar h2{
+  color: white;
+}
+
+.headerWhite .sidebar h2{
+  color: black;
+}
 
 
 /* PRESENTATION */
 #presentation{
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 #presentation div{
   max-width: 60rem;
-  margin-right: 30rem;
+  margin-left: 8vw;
   margin-top: 16rem;
   margin-bottom: 26rem;
   border-radius: 1rem;
@@ -257,7 +407,7 @@ header a:hover{
 
 .workWhite{
   border-top: solid 0.1rem black;
-  background-color: white;
+  background-color: rgb(235, 235, 235);
 }
 
 .workWhite h4{
@@ -393,11 +543,19 @@ header a:hover{
 }
 
 .tecnologies p{
-  color: rgb(236, 236, 236);
   padding: 0.3rem;
   font-size: 0.8rem;
-  background-color: #443f47;
   border-radius: 6.25rem;
+}
+
+.projectsWhite .tecnologies p{
+  color: rgb(19, 19, 19);
+  background-color: #c5b6ce;
+}
+
+.projectsBlack .tecnologies p{
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
 }
 
 .title{
@@ -419,7 +577,7 @@ header a:hover{
 
 .contactWhite{
   border-top: 0.1rem solid #000;
-  background-color: white;
+  background-color: rgb(235, 235, 235);
 }
 
 .contactWhite .contactDiv{
@@ -502,8 +660,9 @@ footer {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6.25rem;
+  justify-content: space-around;
+  padding-left: 7vw;
+  padding-right: 7vw;
   height: 8rem;
   font-size: 0.9rem;
   color: #6c757d;
@@ -563,8 +722,17 @@ footer {
   transition: 0.3s;
 }
 
+.footerName,
+.copyright{
+  width: 25%;
+}
+
 .footerName{
   text-align: start;
+}
+
+.copyright{
+  text-align: center;
 }
 
 .footerPrincipalName{
@@ -577,7 +745,6 @@ footer {
   justify-content: space-between;
   align-items: center;
   width: 10rem;
-  gap: 1rem;
 }
 
 .linkedinIcon {
@@ -590,4 +757,216 @@ footer {
 
 .gmailIcon{
   background-image: url("files/gmail.png");
+}
+
+
+
+/* RESPONSIVITY */
+@media (max-width: 1023px) {
+  /* HEADER */
+  .header > h1{
+    font-size: 2rem;
+  }
+  .nav h2{
+    font-size: 0.8rem;
+  }
+
+
+  /* PRESENTATION */
+  #presentation{
+    justify-content: center;
+  }
+  #presentation div{
+    width: 90%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  
+  /* PROJECTS */
+  #projects li{
+    max-width: 45vw;
+  }
+
+
+  /* CONTACT */
+  #contact div{
+    width: max-content;
+  }
+  #contact ul{
+    width: max-content;
+  }
+
+
+  /* FOOTER */
+  footer{
+    padding: 0;
+  }
+  
+  footer p{
+    font-size: 0.8rem;
+  }
+  
+  .footerName .footerPrincipalName{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 767px){
+  /* HEADER */
+  header {
+    justify-content: flex-end;
+  }
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: flex;
+  }
+
+
+  /* PRESENTATION */
+  #presentation h1{
+    font-size: 2rem;
+  }
+  #presentation h2 {
+    margin-bottom: 0.7rem;
+  }
+  #presentation p{
+    font-size: 1rem;
+  }
+
+
+  /* WORKEXPERIENCE */
+  #workexperience h1{
+    font-size: 2rem;
+  }
+  #workexperience h2{
+    font-size: 1rem;
+  }
+  #workexperience h3{
+    font-size: 0.9rem;
+  }
+  #workexperience h4{
+    font-size: 0.8rem;
+  }
+  #workexperience p{
+    font-size: 0.8rem;
+  }
+  #workexperience li{
+    width: 80%;
+  }
+
+
+  /* CONTACT */
+  #contact div{
+    max-width: 90vw;
+  }
+  #contact h1{
+    font-size: 2rem;
+  }
+  #contact ul{
+    padding: 0;
+  }
+  #contact ul p{
+    font-size: 0.9rem;
+  }
+  #contact a {
+    font-size: 0.7rem;
+  }
+  #contact img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  #contact ul li div {
+    padding: 0.7rem;
+  }
+
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 7vw;
+    padding-right: 7vw;
+    height: 8rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+  }
+  .footerWhite{
+    border-top: solid black 0.2rem;
+  }
+  .footerWhite .icon{
+    background-color: rgb(231, 231, 231);
+    border: solid 0.1rem black;
+    color: white;
+  }
+  .footerWhite .icon:hover{
+    width: 2.6rem;
+    height: 2.6rem;
+    background-size: 1.9rem;
+    box-shadow: 0 0 1rem #a00bdb;
+  }
+  .footerWhite .footerPrincipalName{
+    color: black;
+  }
+  .footerBlack{
+    border-top: solid white 0.2rem;
+  }
+  .footerBlack .icon{
+    background-color: rgb(231, 231, 231);
+    border: solid 0.1rem black;
+    filter: invert(100%);
+    color: black;
+  }
+  .footerBlack .icon:hover{
+    width: 2.6rem;
+    height: 2.6rem;
+    background-size: 1.9rem;
+    box-shadow: 0 0 1rem #5edb0b;
+  }
+  .footerBlack .footerPrincipalName{
+    color: white;
+  }
+  .icon{
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-size: 1.875rem;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.3s;
+  }
+  .footerName,
+  .copyright{
+    width: 25%;
+  }
+  .footerName{
+    text-align: start;
+  }
+  .copyright{
+    text-align: center;
+  }
+  .footerPrincipalName{
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  .icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 10rem;
+  }
+  .linkedinIcon {
+    background-image: url("files/linkedin.png");
+  }
+  .githubIcon{
+    background-image: url("files/github.png");
+  }
+  .gmailIcon{
+    background-image: url("files/gmail.png");
+  }
 }

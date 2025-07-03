@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleButton = document.getElementById('themeToggle');
+    const themeToggleButton1 = document.getElementById('themeToggle1');
+    const themeToggleButton2 = document.getElementById('themeToggle2');
     const body = document.body;
     const mainHeader = document.getElementById('mainHeader');
     const presentation = document.getElementById('presentation');
@@ -66,5 +67,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    themeToggleButton.addEventListener('click', toggleTheme);
+    themeToggleButton1.addEventListener('click', toggleTheme);
+    themeToggleButton2.addEventListener('click', toggleTheme);
+});
+
+function showSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    const menubutton = document.querySelector('.menu-button svg');
+    sidebar.style.display = 'flex';
+    menubutton.style.display = "none";
+}
+
+function hideSidebar(){
+    const sidebar = document.querySelector('.sidebar');
+    const menubutton = document.querySelector('.menu-button svg');
+    sidebar.style.display = 'none';
+    menubutton.style.display = "flex";
+}
+
+window.addEventListener('resize', function() {
+    const currentWidth = window.innerWidth;
+    if(currentWidth > 800){
+        hideSidebar();
+    }
 });

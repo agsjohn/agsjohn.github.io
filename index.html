@@ -6,7 +6,6 @@
   <title>João Vitor Martins da Silva | Portfólio</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
 </head>
 <body class="bodyBlack">
   <div class="bg-grid"></div>
@@ -14,16 +13,47 @@
   <div class="bg-glow bottom-left"></div>
 
   <header id="mainHeader" class="headerBlack">
-    <div>
-      <a href="#presentation">Início</a>
-      <!-- <a href="skills">Habilidades</a> -->
-      <a href="#workexperience">Experiência</a>
-      <!-- <a href="#education">Formação Acadêmica</a> -->
-      <a href="#projects">Projetos</a>
-      <a href="#contact">Contato</a>
+    <ul class="sidebar">
+      <div>
+        <li class="sidebar-close" onclick=hideSidebar()>
+          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="white"></path> 
+          </svg>
+        </li>
+        <li class="sidebar-login" onclick=hideSidebar()>
+          <button id="themeToggle1"class="themeToggle" onclick="trocarCor()"></button>
+        </li>
+      </div>
+      <li onclick=hideSidebar()><a href="#presentation" class="hideOnMobile"><h2>Início</h2></a></li>
+      <!-- <li onclick=hideSidebar()><a href="#skills" class="hideOnMobile"><h2>Habilidades</h2></a></li> -->
+      <li onclick=hideSidebar()><a href="#workexperience" class="hideOnMobile"><h2>Experiência</h2></a></li>
+      <!-- <li onclick=hideSidebar()><a href="#education" class="hideOnMobile"><h2>Formação Acadêmica</h2></a></li> -->
+      <li onclick=hideSidebar()><a href="#projects" class="hideOnMobile"><h2>Projetos</h2></a></li>
+      <li onclick=hideSidebar()><a href="#contact" class="hideOnMobile"><h2>Contato</h2></a></li>
+    </ul>
+    <li class="menu-button" onclick=showSidebar()>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
+            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
+        </svg>
+    </li>
+
+    <div class="header-spacer hideOnMobile"></div>
+
+    <div class="nav hideOnMobile">
+        <a href="#presentation"><h2>Início</h2></a>
+        <!-- <a href="#skills"><h2>Habilidades</h2></a> -->
+        <a href="#workexperience"><h2>Experiência</h2></a>
+        <!-- <a href="#education"><h2>Formação Acadêmica</h2></a> -->
+        <a href="#projects"><h2>Projetos</h2></a>
+        <a href="#contact"><h2>Contato</h2></a>
     </div>
-    <button id="themeToggle" onclick="trocarCor()"></button>
-  </header>
+
+    <div class="header-right-content hideOnMobile">
+        <div class="divTheme">
+          <button id="themeToggle2" class="themeToggle" onclick="trocarCor()"></button>
+        </div>
+    </div>
+</header>
 
   <!-- TODO: -->
   <!-- <section id="skills">
@@ -58,6 +88,7 @@
   <!-- <section id="education">
   </section> -->
 
+  <!-- TODO: responsivity 767px -->
   <section id="projects" class="projectsBlack">
     <h1>Principais Projetos</h1>
     <ul>
@@ -124,6 +155,7 @@
     </div>
   </section>
   
+  <!-- TODO: responsivity 767px -->
   <footer id="mainFooter" class="footerBlack">
     <div class="footerName">
       <p class="footerPrincipalName">João Vitor Martins</p>
@@ -134,7 +166,10 @@
       <a class="icon githubIcon" href="https://github.com/agsjohn" target="_blank"></a>
       <a class="icon gmailIcon" href="mailto:joaovitormds03@gmail.com" target="_self"></a>
     </div>
-    &copy; 2025 João Vitor Martins. All rights reserved. 
-  </footer>
+    <div class="copyright">
+      <p>&copy; 2025 João Vitor Martins. All rights reserved. </p>
+    </div>
+  </footer>  
+  <script src="script.js"></script>
 </body>
 </html>
