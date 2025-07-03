@@ -1,13 +1,17 @@
+/* GENERAL */
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
+
 ::-webkit-scrollbar-track {
   background: #0f172a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #8208b2, #4f46e5);
   border-radius: 0.4rem;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #a00bdb, #6366f1);
 }
@@ -15,24 +19,30 @@
 * {
   margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;
 }
+
 html {
   scroll-behavior: smooth; 
 }
+
 body{
   transition: color 0.5s linear;
 }
+
 .bodyWhite {
   background-color: #f8f9fa;
   color: #000000;
 }
+
 .bodyWhite a{
   text-decoration: none;
   color: black;
 }
+
 .bodyBlack {
   background-color: rgb(25, 25, 25);
   color: #ffffff;
 }
+
 .bodyBlack a{
   text-decoration: none;
   color: white;
@@ -74,6 +84,8 @@ body{
 }
 
 
+
+/* HEADER */
 header {
   height: 4rem;
   width: 100%;
@@ -87,20 +99,25 @@ header {
   padding-right: 3rem;
   z-index: 10; 
 }
+
 .headerWhite{
   background-color: white;
   border-bottom: solid 0.1rem black;
 }
+
 .headerWhite a{
   color: black;
 }
+
 .headerBlack{
   background-color: black;
   border-bottom: solid 0.1rem white;
 }
+
 .headerBlack a{
   color: white;
 }
+
 header div{
   height: 4rem;
   width: 100%;
@@ -112,15 +129,18 @@ header div{
   padding-left: 25rem;
   padding-right: 25rem;
 }
+
 header a{
   transition: color 0.3s;
   font-weight: bold;
   text-decoration: none;
 }
+
 header a:hover{
   color: slateblue;
   font-weight: bold;
 }
+
 #themeToggle{
   width: 1.6rem;
   height: 1.6rem;
@@ -129,15 +149,18 @@ header a:hover{
   background-repeat: no-repeat;
   background-position: center;
 }
+
 .bodyWhite #themeToggle{
   background-image: url("files/moon.png");
   border: 0.12rem black solid;
   transition: 0.3s;
 }
+
 .bodyWhite #themeToggle:hover{
   cursor: pointer;
   box-shadow: 0 0 1rem #8208b2;
 }
+
 .bodyBlack #themeToggle{
   background-image: url("files/sun.png");
   background-size: 1.2rem;
@@ -145,17 +168,21 @@ header a:hover{
   filter: invert(100%);
   transition: 0.3s;
 }
+
 .bodyBlack #themeToggle:hover{
   cursor: pointer;
   box-shadow: 0 0 1rem #24b208;
 }
 
 
+
+/* PRESENTATION */
 #presentation{
   margin: 0;
   display: flex;
   justify-content: center;
 }
+
 #presentation div{
   max-width: 60rem;
   margin-right: 30rem;
@@ -163,35 +190,45 @@ header a:hover{
   margin-bottom: 26rem;
   border-radius: 1rem;
 }
+
 #presentation h1{
   font-size: 4rem;
 }
+
 .presentationWhite h2{
   color: #343a40;
 }
+
 .presentationWhite .buttonLink{
   background: white;
   color: black;
 }
+
 .presentationWhite .presentatinoText{
   color: #343a40;
 }
+
 .presentationBlack h2{
   color: #ced5db;
 }
+
 .presentationBlack .presentatinoText{
   color: #b9b9b9;
 }
+
 .presentationBlack .buttonLink{
   background: rgb(15, 15, 15);
   color: white;
 }
+
 #presentation h2 {
   margin-bottom: 1rem;
 }
+
 #presentation p{
   font-size: 1.5rem;
 }
+
 .buttonLink {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -201,6 +238,7 @@ header a:hover{
   text-decoration: none;
   transition: 0.3s;
 }
+
 .buttonLink:hover {
   display: inline-block;
   font-size: 1.3rem;
@@ -209,51 +247,65 @@ header a:hover{
 }
 
 
+
+/* WORK EXPERIENCE */
 #workexperience{
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
+
 .workWhite{
   border-top: solid 0.1rem black;
   background-color: white;
 }
+
 .workWhite h4{
   color: rgb(68, 68, 68);
 }
+
 .workWhite li{
   background: #fff;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 }
+
 .workBlack{
   border-top: solid 0.1rem white;
   background-color: rgb(20, 20, 20);
 }
+
 .workBlack p{
   color: rgb(161, 161, 161);
 }
+
 .workBlack h4{
   color: rgb(189, 189, 189);
 }
+
 .workBlack li{
   background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
 }
+
 #workexperience h1{
   font-size: 3rem;
 }
+
 #workexperience h2{
   padding-bottom: 0.3rem;
   font-size: 1.2rem;
 }
+
 #workexperience h3{
   padding-bottom: 0.3rem;
   font-size: 1.1rem;
   color: slateblue;
 }
+
 #workexperience h4{
   padding-bottom: 0.3rem;
 }
+
 #workexperience ul{
   list-style: none;
   margin-top: 1rem;
@@ -262,6 +314,7 @@ header a:hover{
   justify-content: center;
   gap: 1rem;
 }
+
 #workexperience li{
   height: fit-content;
   padding: 1rem;
@@ -270,37 +323,48 @@ header a:hover{
 }
 
 
+
+/* PROJECTS */
 #projects {
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
+
 .projectsWhite{
   border-top: solid 0.1rem black;
 }
+
 .projectsWhite li{
   background: #fff;
   box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
 }
+
 .projectsBlack{
   border-top: solid 0.1rem white;
 }
+
 .projectsBlack .text{
   color: rgb(161, 161, 161);
 }
+
 .projectsBlack li{
   background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
 }
+
 #projects a{
   transition: color 0.3s linear;
 }
+
 #projects a:hover{
   color: slateblue;
 }
+
 #projects h1{
   font-size: 3rem;
 }
+
 #projects ul{
   list-style: none;
   margin-top: 1rem;
@@ -309,21 +373,25 @@ header a:hover{
   justify-content: center;
   gap: 1rem;
 }
+
 #projects li{
   height: fit-content;
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
 }
+
 .text{
   padding-bottom: 0.5rem;
 }
+
 .tecnologies{
   padding-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
 .tecnologies p{
   color: rgb(236, 236, 236);
   padding: 0.3rem;
@@ -331,6 +399,7 @@ header a:hover{
   background-color: #443f47;
   border-radius: 6.25rem;
 }
+
 .title{
   padding-bottom: 0.5rem;
   font-size: 1.3rem;
@@ -338,6 +407,8 @@ header a:hover{
 }
 
 
+
+/* CONTATO */
 #contact {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -345,41 +416,52 @@ header a:hover{
   flex-direction: column;
   align-items: center;
 }
+
 .contactWhite{
   border-top: 0.1rem solid #000;
   background-color: white;
 }
+
 .contactWhite .contactDiv{
   background: #fff;
   box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
 }
+
 .contactBlack{
   border-top: 0.1rem solid white;
   background-color: rgb(20, 20, 20);
 }
+
 .contactBlack img{
   filter: invert(100%);
 }
+
 .contactBlack .contactDiv{
   background-color: rgb(15, 15, 15);
   box-shadow: 0 0rem 0.5rem rgba(255, 255, 255, 0.15);
 }
+
 .contactDiv{
   border-radius: 0.5rem;
 }
+
 #contact div{
   width: 50rem;
   padding: 1rem;
 }
+
 #contact a{
   transition: color 0.3s linear;
 }
+
 #contact a:hover{
   color: slateblue;
 }
+
 #contact ul li div{
   width: fit-content;
 }
+
 #contact ul{
   width: 50rem;
   padding: 1rem;
@@ -387,28 +469,35 @@ header a:hover{
   display: grid;
   grid: auto auto / auto auto;
 }
+
 #contact li{
   display: flex;
   align-items: center;
 }
+
 #contact h1{
   text-align: center;
   font-size: 3rem;
   padding-bottom: 1rem;
 }
+
 #contact h2 {
   text-align: center;
 }
+
 #contact img{
   height: 3rem;
   width: 3rem;
 }
+
 #contact p {
   font-size: 1rem;
   color: #6c757d;
 }
 
 
+
+/* FOOTER */
 footer {
   text-align: center;
   display: flex;
@@ -419,41 +508,50 @@ footer {
   font-size: 0.9rem;
   color: #6c757d;
 }
+
 .footerWhite{
   border-top: solid black 0.2rem;
 }
+
 .footerWhite .icon{
   background-color: rgb(231, 231, 231);
   border: solid 0.1rem black;
   color: white;
 }
+
 .footerWhite .icon:hover{
   width: 2.6rem;
   height: 2.6rem;
   background-size: 1.9rem;
   box-shadow: 0 0 1rem #a00bdb;
 }
+
 .footerWhite .footerPrincipalName{
   color: black;
 }
+
 .footerBlack{
   border-top: solid white 0.2rem;
 }
+
 .footerBlack .icon{
   background-color: rgb(231, 231, 231);
   border: solid 0.1rem black;
   filter: invert(100%);
   color: black;
 }
+
 .footerBlack .icon:hover{
   width: 2.6rem;
   height: 2.6rem;
   background-size: 1.9rem;
   box-shadow: 0 0 1rem #5edb0b;
 }
+
 .footerBlack .footerPrincipalName{
   color: white;
 }
+
 .icon{
   display: inline-block;
   width: 2.5rem;
@@ -464,13 +562,16 @@ footer {
   background-position: center;
   transition: 0.3s;
 }
+
 .footerName{
   text-align: start;
 }
+
 .footerPrincipalName{
   font-weight: bold;
   font-size: 1rem;
 }
+
 .icons{
   display: flex;
   justify-content: space-between;
@@ -478,12 +579,15 @@ footer {
   width: 10rem;
   gap: 1rem;
 }
+
 .linkedinIcon {
   background-image: url("files/linkedin.png");
 }
+
 .githubIcon{
   background-image: url("files/github.png");
 }
+
 .gmailIcon{
   background-image: url("files/gmail.png");
 }
