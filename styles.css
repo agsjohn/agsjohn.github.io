@@ -210,36 +210,33 @@ header a:hover{
   justify-content: center;
 }
 
-.themeToggle{
-  width: 1.6rem;
-  height: 1.6rem;
+.themeToggle {
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
-  background-size: 0.9rem;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.bodyWhite .themeToggle{
-  background-image: url("files/moon.png");
-  border: 0.12rem black solid;
-  transition: 0.3s;
-}
-
-.bodyWhite .themeToggle:hover{
   cursor: pointer;
+  border: 0.12rem black solid;
+  transition: 0.3s ease; 
+}
+
+.bodyWhite .themeToggle {
+  background-image: url("files/moon.png");
+  background-size: 0.9rem;
+}
+
+.bodyWhite .themeToggle:hover {
   box-shadow: 0 0 1rem #8208b2;
 }
 
-.bodyBlack .themeToggle{
+.bodyBlack .themeToggle {
   background-image: url("files/sun.png");
-  background-size: 1.2rem;
-  border: 0.12rem black solid;
+  background-size: 1.2rem; 
   filter: invert();
-  transition: 0.3s;
 }
 
 .bodyBlack .themeToggle:hover{
-  cursor: pointer;
   box-shadow: 0 0 1rem rgb(56, 178, 8)
 } 
 
@@ -668,6 +665,32 @@ footer {
   color: #6c757d;
 }
 
+.icons {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 1.5rem;
+  width: 13rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-size: 1.9rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
 .footerWhite{
   border-top: solid black 0.2rem;
 }
@@ -679,9 +702,6 @@ footer {
 }
 
 .footerWhite .icon:hover{
-  width: 2.6rem;
-  height: 2.6rem;
-  background-size: 1.9rem;
   box-shadow: 0 0 1rem #a00bdb;
 }
 
@@ -701,25 +721,11 @@ footer {
 }
 
 .footerBlack .icon:hover{
-  width: 2.6rem;
-  height: 2.6rem;
-  background-size: 1.9rem;
   box-shadow: 0 0 1rem #5edb0b;
 }
 
 .footerBlack .footerPrincipalName{
   color: white;
-}
-
-.icon{
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-size: 1.875rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.3s;
 }
 
 .footerName,
@@ -738,13 +744,6 @@ footer {
 .footerPrincipalName{
   font-weight: bold;
   font-size: 1rem;
-}
-
-.icons{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 10rem;
 }
 
 .linkedinIcon {
