@@ -1,13 +1,17 @@
+/* GENERAL */
 ::-webkit-scrollbar {
   width: 0.5rem;
 }
+
 ::-webkit-scrollbar-track {
   background: #0f172a;
 }
+
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #8208b2, #4f46e5);
   border-radius: 0.4rem;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, #a00bdb, #6366f1);
 }
@@ -15,24 +19,30 @@
 * {
   margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif;
 }
+
 html {
   scroll-behavior: smooth; 
 }
+
 body{
   transition: color 0.5s linear;
 }
+
 .bodyWhite {
-  background-color: #f8f9fa;
+  background-color: rgb(230, 230, 230);
   color: #000000;
 }
+
 .bodyWhite a{
   text-decoration: none;
   color: black;
 }
+
 .bodyBlack {
   background-color: rgb(25, 25, 25);
-  color: #ffffff;
+  color: white;
 }
+
 .bodyBlack a{
   text-decoration: none;
   color: white;
@@ -74,124 +84,298 @@ body{
 }
 
 
+
+/* HEADER */
 header {
-  height: 4rem;
+  display: flex;
+  background-color: #2c2c30;
   width: 100%;
   position: fixed;
-  top: 0rem;
+  height: 3.5rem;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 10;
+  border-bottom: 1px solid rgb(158, 158, 158);
+}
+
+header svg{
+  display: flex;
+  fill: white;
+  width: 2rem;
+  height: 2rem;
+}
+
+.headerWhite svg{
+  filter: invert();
+}
+
+.headerBlack svg{
+  filter: none;
+}
+
+.nav {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 2rem; 
+  height: 100%;
+}
+
+.nav > a {
+  text-align: center;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  color: white;
+  text-decoration: none;
+}
+
+.nav>a:hover {
+  transform: scale(1.1);
+  transition: 0.4s ease;
+  cursor: pointer;
+}
+
+.nav h2{
+  font-size: 1.3rem;
+  padding: 0; 
+  margin: 0;
+  position: relative;
+}
+
+.nav a h2::after{
+  content: '';
+  background-color: slateblue;
+  border-radius: 10rem;
+  height: 0.1rem;
+  width: 0;
+  position: absolute;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: width 0.3s ease;
+}
+
+.nav a h2:hover::after{
+  width: 100%;
+}
+
+.header-spacer, .header-right-content {
+  flex: 1; 
   display: flex;
   align-items: center;
-  justify-content: right;
-  padding-right: 3rem;
-  z-index: 10; 
 }
+
+.header-right-content {
+  justify-content: flex-end;
+}
+
+.menu-button{
+  display: none;
+}
+
 .headerWhite{
   background-color: white;
   border-bottom: solid 0.1rem black;
 }
+
 .headerWhite a{
   color: black;
 }
+
 .headerBlack{
   background-color: black;
   border-bottom: solid 0.1rem white;
 }
+
 .headerBlack a{
   color: white;
 }
-header div{
-  height: 4rem;
-  width: 100%;
-  top: 0rem;
-  left: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 25rem;
-  padding-right: 25rem;
-}
+
 header a{
   transition: color 0.3s;
   font-weight: bold;
   text-decoration: none;
 }
+
 header a:hover{
   color: slateblue;
   font-weight: bold;
 }
-#themeToggle{
-  width: 1.6rem;
-  height: 1.6rem;
+
+.divTheme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.themeToggle {
+  width: 1.8rem;
+  height: 1.8rem;
   border-radius: 50%;
-  background-size: 0.9rem;
   background-repeat: no-repeat;
   background-position: center;
-}
-.bodyWhite #themeToggle{
-  background-image: url("files/moon.png");
-  border: 0.12rem black solid;
-  transition: 0.3s;
-}
-.bodyWhite #themeToggle:hover{
   cursor: pointer;
+  border: 0.12rem black solid;
+  transition: 0.3s ease; 
+}
+
+.bodyWhite .themeToggle {
+  background-image: url("files/moon.png");
+  background-size: 0.9rem;
+}
+
+.bodyWhite .themeToggle:hover {
   box-shadow: 0 0 1rem #8208b2;
 }
-.bodyBlack #themeToggle{
+
+.bodyBlack .themeToggle {
   background-image: url("files/sun.png");
-  background-size: 1.2rem;
-  border: 0.12rem black solid;
-  filter: invert(100%);
+  background-size: 1.2rem; 
+  filter: invert();
+}
+
+.bodyBlack .themeToggle:hover{
+  box-shadow: 0 0 1rem rgb(56, 178, 8)
+} 
+
+
+
+/* SIDEBAR */
+.sidebar{
+  position: fixed;
+  top: 0; 
+  right: 0;
+  height: 100%;
+  width: 250px;
+  background-color: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.sidebar > div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+}
+
+.sidebar li{
+  min-height: 3rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  width: 100%;
   transition: 0.3s;
 }
-.bodyBlack #themeToggle:hover{
-  cursor: pointer;
-  box-shadow: 0 0 1rem #24b208;
+
+.sidebar li:hover{
+  transform: scale(1.1);
+}
+
+.sidebar .sidebar-close{
+  padding: 1rem;
+  height: 3.5rem;
+  width: fit-content;
+  margin: 0;
+}
+
+.sidebar .sidebar-close img{
+  height: 100%;
+  filter: invert();
+}
+
+.sidebar .sidebar-login{
+  padding: 1rem;
+  height: 3.5rem;
+  width: fit-content;
+  margin: 0;
+}
+
+.sidebar .sidebar-login img{
+  height: 100%;
+  filter: invert();
+}
+
+.sidebar a{
+  height: 100%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+  width: 100%;
+}
+
+.headerBlack .sidebar h2{
+  color: white;
+}
+
+.headerWhite .sidebar h2{
+  color: black;
 }
 
 
+/* PRESENTATION */
 #presentation{
   margin: 0;
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
+
 #presentation div{
   max-width: 60rem;
-  margin-right: 30rem;
+  margin-left: 8vw;
   margin-top: 16rem;
   margin-bottom: 26rem;
   border-radius: 1rem;
 }
+
 #presentation h1{
   font-size: 4rem;
 }
+
 .presentationWhite h2{
   color: #343a40;
 }
+
 .presentationWhite .buttonLink{
   background: white;
   color: black;
 }
+
 .presentationWhite .presentatinoText{
   color: #343a40;
 }
+
 .presentationBlack h2{
   color: #ced5db;
 }
+
 .presentationBlack .presentatinoText{
   color: #b9b9b9;
 }
+
 .presentationBlack .buttonLink{
   background: rgb(15, 15, 15);
   color: white;
 }
+
 #presentation h2 {
   margin-bottom: 1rem;
 }
+
 #presentation p{
   font-size: 1.5rem;
 }
+
 .buttonLink {
   display: inline-block;
   padding: 0.5rem 1rem;
@@ -201,6 +385,7 @@ header a:hover{
   text-decoration: none;
   transition: 0.3s;
 }
+
 .buttonLink:hover {
   display: inline-block;
   font-size: 1.3rem;
@@ -209,51 +394,65 @@ header a:hover{
 }
 
 
+
+/* WORK EXPERIENCE */
 #workexperience{
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
+
 .workWhite{
   border-top: solid 0.1rem black;
-  background-color: white;
+  background-color: rgb(235, 235, 235);
 }
+
 .workWhite h4{
   color: rgb(68, 68, 68);
 }
+
 .workWhite li{
   background: #fff;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 }
+
 .workBlack{
   border-top: solid 0.1rem white;
   background-color: rgb(20, 20, 20);
 }
+
 .workBlack p{
   color: rgb(161, 161, 161);
 }
+
 .workBlack h4{
   color: rgb(189, 189, 189);
 }
+
 .workBlack li{
   background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
 }
+
 #workexperience h1{
   font-size: 3rem;
 }
+
 #workexperience h2{
   padding-bottom: 0.3rem;
   font-size: 1.2rem;
 }
+
 #workexperience h3{
   padding-bottom: 0.3rem;
   font-size: 1.1rem;
   color: slateblue;
 }
+
 #workexperience h4{
   padding-bottom: 0.3rem;
 }
+
 #workexperience ul{
   list-style: none;
   margin-top: 1rem;
@@ -262,6 +461,7 @@ header a:hover{
   justify-content: center;
   gap: 1rem;
 }
+
 #workexperience li{
   height: fit-content;
   padding: 1rem;
@@ -270,37 +470,48 @@ header a:hover{
 }
 
 
+
+/* PROJECTS */
 #projects {
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
+
 .projectsWhite{
   border-top: solid 0.1rem black;
 }
+
 .projectsWhite li{
   background: #fff;
   box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
 }
+
 .projectsBlack{
   border-top: solid 0.1rem white;
 }
+
 .projectsBlack .text{
   color: rgb(161, 161, 161);
 }
+
 .projectsBlack li{
   background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
 }
+
 #projects a{
   transition: color 0.3s linear;
 }
+
 #projects a:hover{
   color: slateblue;
 }
+
 #projects h1{
   font-size: 3rem;
 }
+
 #projects ul{
   list-style: none;
   margin-top: 1rem;
@@ -309,28 +520,41 @@ header a:hover{
   justify-content: center;
   gap: 1rem;
 }
+
 #projects li{
   height: fit-content;
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
 }
+
 .text{
   padding-bottom: 0.5rem;
 }
+
 .tecnologies{
   padding-top: 0.5rem;
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
 }
+
 .tecnologies p{
-  color: rgb(236, 236, 236);
   padding: 0.3rem;
   font-size: 0.8rem;
-  background-color: #443f47;
   border-radius: 6.25rem;
 }
+
+.projectsWhite .tecnologies p{
+  color: rgb(19, 19, 19);
+  background-color: #c5b6ce;
+}
+
+.projectsBlack .tecnologies p{
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
+}
+
 .title{
   padding-bottom: 0.5rem;
   font-size: 1.3rem;
@@ -338,6 +562,8 @@ header a:hover{
 }
 
 
+
+/* CONTATO */
 #contact {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -345,41 +571,52 @@ header a:hover{
   flex-direction: column;
   align-items: center;
 }
+
 .contactWhite{
   border-top: 0.1rem solid #000;
-  background-color: white;
+  background-color: rgb(235, 235, 235);
 }
+
 .contactWhite .contactDiv{
   background: #fff;
   box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
 }
+
 .contactBlack{
   border-top: 0.1rem solid white;
   background-color: rgb(20, 20, 20);
 }
+
 .contactBlack img{
   filter: invert(100%);
 }
+
 .contactBlack .contactDiv{
   background-color: rgb(15, 15, 15);
   box-shadow: 0 0rem 0.5rem rgba(255, 255, 255, 0.15);
 }
+
 .contactDiv{
   border-radius: 0.5rem;
 }
+
 #contact div{
   width: 50rem;
   padding: 1rem;
 }
+
 #contact a{
   transition: color 0.3s linear;
 }
+
 #contact a:hover{
   color: slateblue;
 }
+
 #contact ul li div{
   width: fit-content;
 }
+
 #contact ul{
   width: 50rem;
   padding: 1rem;
@@ -387,103 +624,373 @@ header a:hover{
   display: grid;
   grid: auto auto / auto auto;
 }
+
 #contact li{
   display: flex;
   align-items: center;
 }
+
 #contact h1{
   text-align: center;
   font-size: 3rem;
   padding-bottom: 1rem;
 }
+
 #contact h2 {
   text-align: center;
 }
+
 #contact img{
   height: 3rem;
   width: 3rem;
 }
+
 #contact p {
   font-size: 1rem;
   color: #6c757d;
 }
 
 
+
+/* FOOTER */
 footer {
   text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6.25rem;
+  justify-content: space-around;
+  padding-left: 7vw;
+  padding-right: 7vw;
   height: 8rem;
   font-size: 0.9rem;
   color: #6c757d;
 }
+
+.icons {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  gap: 1.5rem;
+  width: 13rem;
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-size: 1.9rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
 .footerWhite{
   border-top: solid black 0.2rem;
 }
+
 .footerWhite .icon{
   background-color: rgb(231, 231, 231);
   border: solid 0.1rem black;
   color: white;
 }
+
 .footerWhite .icon:hover{
-  width: 2.6rem;
-  height: 2.6rem;
-  background-size: 1.9rem;
   box-shadow: 0 0 1rem #a00bdb;
 }
+
 .footerWhite .footerPrincipalName{
   color: black;
 }
+
 .footerBlack{
   border-top: solid white 0.2rem;
 }
+
 .footerBlack .icon{
   background-color: rgb(231, 231, 231);
   border: solid 0.1rem black;
   filter: invert(100%);
   color: black;
 }
+
 .footerBlack .icon:hover{
-  width: 2.6rem;
-  height: 2.6rem;
-  background-size: 1.9rem;
   box-shadow: 0 0 1rem #5edb0b;
 }
+
 .footerBlack .footerPrincipalName{
   color: white;
 }
-.icon{
-  display: inline-block;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background-size: 1.875rem;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: 0.3s;
+
+.footerName,
+.copyright{
+  width: 25%;
 }
+
 .footerName{
   text-align: start;
 }
+
+.copyright{
+  text-align: center;
+}
+
 .footerPrincipalName{
   font-weight: bold;
   font-size: 1rem;
 }
-.icons{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 10rem;
-  gap: 1rem;
-}
+
 .linkedinIcon {
   background-image: url("files/linkedin.png");
 }
+
 .githubIcon{
   background-image: url("files/github.png");
 }
+
 .gmailIcon{
   background-image: url("files/gmail.png");
+}
+
+
+
+/* RESPONSIVITY */
+@media (max-width: 1023px) {
+  /* HEADER */
+  .header > h1{
+    font-size: 2rem;
+  }
+  .nav h2{
+    font-size: 0.8rem;
+  }
+
+
+  /* PRESENTATION */
+  #presentation{
+    justify-content: center;
+  }
+  #presentation div{
+    width: 90%;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  
+  /* PROJECTS */
+  #projects li{
+    max-width: 45vw;
+  }
+
+
+  /* CONTACT */
+  #contact div{
+    width: max-content;
+  }
+  #contact ul{
+    width: max-content;
+  }
+
+
+  /* FOOTER */
+  footer{
+    padding: 0;
+  }
+  footer p{
+    font-size: 0.8rem;
+  }
+  .footerName .footerPrincipalName{
+    font-size: 1rem;
+  }
+}
+
+@media(max-width: 767px){
+  /* HEADER */
+  header {
+    justify-content: flex-end;
+  }
+  .hideOnMobile{
+    display: none;
+  }
+  .menu-button{
+    display: flex;
+  }
+
+
+  /* PRESENTATION */
+  #presentation h1{
+    font-size: 2rem;
+  }
+  #presentation h2 {
+    margin-bottom: 0.7rem;
+  }
+  #presentation p{
+    font-size: 1rem;
+  }
+
+
+  /* WORKEXPERIENCE */
+  #workexperience h1{
+    font-size: 2rem;
+  }
+  #workexperience h2{
+    font-size: 1rem;
+  }
+  #workexperience h3{
+    font-size: 0.9rem;
+  }
+  #workexperience h4{
+    font-size: 0.8rem;
+  }
+  #workexperience p{
+    font-size: 0.8rem;
+  }
+  #workexperience li{
+    width: 80%;
+  }
+
+
+  /* PROJECTS */
+  #projects h1{
+    font-size: 2rem;
+  }
+  #projects .title{
+    font-size: 1rem;
+  }
+  #projects p{
+    font-size: 0.8rem;
+  }
+  #projects ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  #projects li{
+    min-width: 20rem;
+    margin: 0.5rem;
+  }
+
+  
+  /* CONTACT */
+  #contact div{
+    max-width: 90vw;
+  }
+  #contact h1{
+    font-size: 2rem;
+  }
+  #contact ul{
+    padding: 0;
+  }
+  #contact ul p{
+    font-size: 0.9rem;
+  }
+  #contact a {
+    font-size: 0.7rem;
+  }
+  #contact img {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+  #contact ul li div {
+    padding: 0.7rem;
+  }
+
+
+  /* FOOTER */
+  .icons{
+    width: 9.5rem;
+  }
+  .icon{
+    width: 2rem;
+    height: 2rem;
+    background-size: 1.5rem;
+  }
+  .icon:hover{
+    width: 2.1rem;
+    height: 2.1rem;
+    background-size: 1.6rem;
+  }
+  .footerName,
+  .copyright p{
+    font-size: 0.65rem;
+  }
+  .footerName .footerPrincipalName {
+    font-size: 0.75rem;
+  }
+  footer p{
+    font-size: 0.65rem;
+  }
+}
+
+@media (max-width: 424px) {
+  /* PRESENTATION */
+  .buttonLink {
+    padding: 0.4rem 0.4rem;
+    margin-top: 0.5rem;
+    border-radius: 0.6rem;
+  }
+  .buttonLink:hover {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.6rem;
+    box-shadow: 0 0.2rem 1rem #8208b2;
+  }
+
+  
+  /* PROJECTS */
+  #projects h1{
+    font-size: 2rem;
+  }
+  #projects .title{
+    font-size: 1rem;
+  }
+  #projects p{
+    font-size: 0.8rem;
+  }
+  #projects ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  #projects li{
+    min-width: 18rem;
+    margin: 0.5rem;
+  }
+
+  
+  /* CONTACT */
+  #contact .contactDiv{
+    width: 90%;
+  }
+  #contact ul{
+    display: flex;
+    flex-direction: column;
+  }
+  #contact ul p{
+    font-size: 1rem;
+  }
+  #contact a {
+    font-size: 0.8rem;
+  }
+  #contact img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  
+  /* FOOTER */
+  .icons{
+    width: 8rem;
+    gap: 0.7rem;
+  }
+  .footerName,
+  .copyright{
+    width: 26%;
+  }
 }
