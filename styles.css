@@ -801,11 +801,9 @@ footer {
   footer{
     padding: 0;
   }
-  
   footer p{
     font-size: 0.8rem;
   }
-  
   .footerName .footerPrincipalName{
     font-size: 1rem;
   }
@@ -905,9 +903,6 @@ footer {
 
 
   /* FOOTER */
-  footer {
-    padding: 0;
-  }
   .icons{
     width: 9.5rem;
   }
@@ -931,13 +926,71 @@ footer {
   footer p{
     font-size: 0.65rem;
   }
-  .linkedinIcon {
-    background-image: url("files/linkedin.png");
+}
+
+@media (max-width: 424px) {
+  /* PRESENTATION */
+  .buttonLink {
+    padding: 0.4rem 0.4rem;
+    margin-top: 0.5rem;
+    border-radius: 0.6rem;
   }
-  .githubIcon{
-    background-image: url("files/github.png");
+  .buttonLink:hover {
+    font-size: 1.1rem;
+    padding: 0.6rem 0.6rem;
+    box-shadow: 0 0.2rem 1rem #8208b2;
   }
-  .gmailIcon{
-    background-image: url("files/gmail.png");
+
+  
+  /* PROJECTS */
+  #projects h1{
+    font-size: 2rem;
+  }
+  #projects .title{
+    font-size: 1rem;
+  }
+  #projects p{
+    font-size: 0.8rem;
+  }
+  #projects ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  #projects li{
+    min-width: 18rem;
+    margin: 0.5rem;
+  }
+
+  
+  /* CONTACT */
+  #contact .contactDiv{
+    width: 90%;
+  }
+  #contact ul{
+    display: flex;
+    flex-direction: column;
+  }
+  #contact ul p{
+    font-size: 1rem;
+  }
+  #contact a {
+    font-size: 0.8rem;
+  }
+  #contact img {
+    height: 2rem;
+    width: 2rem;
+  }
+
+  
+  /* FOOTER */
+  .icons{
+    width: 8rem;
+    gap: 0.7rem;
+  }
+  .footerName,
+  .copyright{
+    width: 26%;
   }
 }
