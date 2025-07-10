@@ -857,6 +857,28 @@ footer {
   }
 
 
+  /* PROJECTS */
+  #projects h1{
+    font-size: 2rem;
+  }
+  #projects .title{
+    font-size: 1rem;
+  }
+  #projects p{
+    font-size: 0.8rem;
+  }
+  #projects ul{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  #projects li{
+    min-width: 20rem;
+    margin: 0.5rem;
+  }
+
+  
   /* CONTACT */
   #contact div{
     max-width: 90vw;
@@ -884,80 +906,30 @@ footer {
 
   /* FOOTER */
   footer {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-left: 7vw;
-    padding-right: 7vw;
-    height: 8rem;
-    font-size: 0.9rem;
-    color: #6c757d;
-  }
-  .footerWhite{
-    border-top: solid black 0.2rem;
-  }
-  .footerWhite .icon{
-    background-color: rgb(231, 231, 231);
-    border: solid 0.1rem black;
-    color: white;
-  }
-  .footerWhite .icon:hover{
-    width: 2.6rem;
-    height: 2.6rem;
-    background-size: 1.9rem;
-    box-shadow: 0 0 1rem #a00bdb;
-  }
-  .footerWhite .footerPrincipalName{
-    color: black;
-  }
-  .footerBlack{
-    border-top: solid white 0.2rem;
-  }
-  .footerBlack .icon{
-    background-color: rgb(231, 231, 231);
-    border: solid 0.1rem black;
-    filter: invert(100%);
-    color: black;
-  }
-  .footerBlack .icon:hover{
-    width: 2.6rem;
-    height: 2.6rem;
-    background-size: 1.9rem;
-    box-shadow: 0 0 1rem #5edb0b;
-  }
-  .footerBlack .footerPrincipalName{
-    color: white;
-  }
-  .icon{
-    display: inline-block;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background-size: 1.875rem;
-    background-repeat: no-repeat;
-    background-position: center;
-    transition: 0.3s;
-  }
-  .footerName,
-  .copyright{
-    width: 25%;
-  }
-  .footerName{
-    text-align: start;
-  }
-  .copyright{
-    text-align: center;
-  }
-  .footerPrincipalName{
-    font-weight: bold;
-    font-size: 1rem;
+    padding: 0;
   }
   .icons{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 10rem;
+    width: 9.5rem;
+  }
+  .icon{
+    width: 2rem;
+    height: 2rem;
+    background-size: 1.5rem;
+  }
+  .icon:hover{
+    width: 2.1rem;
+    height: 2.1rem;
+    background-size: 1.6rem;
+  }
+  .footerName,
+  .copyright p{
+    font-size: 0.65rem;
+  }
+  .footerName .footerPrincipalName {
+    font-size: 0.75rem;
+  }
+  footer p{
+    font-size: 0.65rem;
   }
   .linkedinIcon {
     background-image: url("files/linkedin.png");
