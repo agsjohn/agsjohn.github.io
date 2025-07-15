@@ -211,6 +211,11 @@ header a:hover{
   cursor: pointer;
   border: 0.12rem black solid;
   transition: 0.3s ease; 
+  will-change: transform;
+}
+
+.themeToggle:hover {
+  transform: scale(1.025);
 }
 
 .bodyWhite .themeToggle {
@@ -317,17 +322,18 @@ header a:hover{
 
 /* PRESENTATION */
 #presentation{
-  margin: 0;
+  margin: 0 5%;
   display: flex;
-  justify-content: start;
+  justify-content: space-between;
+  align-items: center;
+  height: 60rem;
+  gap: 2rem;
 }
 
 #presentation div{
-  max-width: 60rem;
-  margin-left: 8vw;
-  margin-top: 16rem;
-  margin-bottom: 26rem;
-  border-radius: 1rem;
+  margin-top: -5rem;
+  width: max-content;
+  max-width: 50rem;
 }
 
 #presentation h1{
@@ -365,7 +371,7 @@ header a:hover{
 }
 
 #presentation p{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .buttonLink {
@@ -383,6 +389,33 @@ header a:hover{
   font-size: 1.3rem;
   padding: 0.6rem 1.1rem;
   box-shadow: 0 0.2rem 1rem #8208b2;
+}
+
+.myImage{
+  width: fit-content;
+  height: fit-content;
+}
+
+.presentationBlack .myImage img{
+  background-color: rgb(19, 19, 19);
+}
+
+.presentationWhite .myImage img{
+  background-color: rgb(218, 218, 218);
+}
+
+.myImage img{
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  border: 0.15rem solid slateblue;
+  transition: 0.5s;
+  will-change: transform;
+}
+
+.myImage img:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 2rem #8208b2;
 }
 
 
@@ -763,17 +796,20 @@ footer {
   }
 
 
-  /* PRESENTATION */
-  #presentation{
-    justify-content: center;
-  }
-  #presentation div{
-    width: 90%;
-    margin-right: 0;
-    margin-left: 0;
-  }
-
   
+
+  /* PRESENTATION */
+  #presentation h1{
+    font-size: 3rem;
+  }
+  #presentation h2 {
+    font-size: 1.1rem;
+  }
+  #presentation p{
+    font-size: 1rem;
+  }
+  
+
   /* PROJECTS */
   #projects li{
     max-width: 45vw;
@@ -815,14 +851,38 @@ footer {
 
 
   /* PRESENTATION */
+  #presentation{
+    flex-direction: column-reverse;
+  }
+  #presentation{
+    margin: 0 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  #presentation div{
+    margin-top: 0;
+    width: max-content;
+    height: max-content;
+    max-width: 90%;
+    text-align: center;
+  }
+  #presentation div.myImage{
+    margin-top: -30%;
+  }
+  .myImage img{
+    width: 35vw;
+    height: 35vw;
+  }
   #presentation h1{
     font-size: 2rem;
   }
   #presentation h2 {
+    font-size: 1rem;
     margin-bottom: 0.7rem;
   }
   #presentation p{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
 
@@ -920,8 +980,12 @@ footer {
   }
 }
 
+
 @media (max-width: 424px) {
   /* PRESENTATION */
+  #presentation div{
+    max-width: 100%;
+  }
   .buttonLink {
     padding: 0.4rem 0.4rem;
     margin-top: 0.5rem;
