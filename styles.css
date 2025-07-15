@@ -324,7 +324,7 @@ header a:hover{
 #presentation{
   margin: 0 5%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 60rem;
   gap: 2rem;
@@ -401,7 +401,7 @@ header a:hover{
 }
 
 .presentationWhite .myImage img{
-  background-color: rgb(218, 218, 218);
+  background-color: rgb(231, 231, 231);
 }
 
 .myImage img{
