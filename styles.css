@@ -62,25 +62,17 @@ body{
   pointer-events: none;
 }
 
-.bg-glow {
+#cursor-glow {
   position: fixed;
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(130, 8, 178, 0.15) 0%, rgba(79, 70, 229, 0.05) 50%, transparent 70%);
   filter: blur(60px);
+  transform: translate(-50%, -50%); 
   z-index: -1;
   pointer-events: none;
-}
-
-.bg-glow.top-right {
-  top: -20%;
-  right: -20%;
-}
-
-.bg-glow.bottom-left {
-  bottom: -20%;
-  left: -20%;
+  transition: width 0.2s ease-out, height 0.2s ease-out;
 }
 
 
@@ -660,7 +652,7 @@ footer {
   justify-content: space-around;
   padding-left: 7vw;
   padding-right: 7vw;
-  height: 8rem;
+  height: 6rem;
   font-size: 0.9rem;
   color: #6c757d;
 }
