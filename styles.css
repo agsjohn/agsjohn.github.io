@@ -506,6 +506,95 @@ header a:hover{
 }
 
 
+/* SKILLS */
+/* SKILLS */
+#skills {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+#skills > p {
+    margin-bottom: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0 1rem;
+}
+
+.skill-category {
+  width: 18rem;
+  height: 9rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  transition: 0.3s;
+}
+
+.skill-category:hover {
+  transform: scale(1.025);
+}
+
+.skillsBlack .skill-category {
+  background-color: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
+}
+
+.skillsWhite .skill-category {
+  background-color: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+}
+
+#skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: slateblue;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skills-list p {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6.25rem;
+  margin-bottom: 0; 
+}
+
+.skillsWhite .skills-list p {
+  color: rgb(19, 19, 19);
+  background-color: #e2d9e8;
+}
+
+.skillsBlack .skills-list p {
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
+}
+
+.skill-category {
+  padding: 1rem;
+}
+#skills h2 {
+  font-size: 1.2rem;
+}
+.skills-list p {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+
 
 /* EDUCATION */
 #education{
