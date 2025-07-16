@@ -440,6 +440,92 @@ header a:hover{
 
 
 
+/* PROJECTS */
+#projects {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+.projectsWhite li{
+  background: #fff;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
+}
+
+.projectsBlack .text{
+  color: rgb(161, 161, 161);
+}
+
+.projectsBlack li{
+  background: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
+}
+
+#projects a{
+  transition: color 0.3s linear;
+}
+
+#projects a:hover{
+  color: slateblue;
+}
+
+#projects ul{
+  list-style: none;
+  margin-top: 1rem;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#projects li{
+  height: fit-content;
+  padding: 1rem;
+  max-width: 30rem;
+  border-radius: 0.625rem;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+#projects li:hover{
+  transform: scale(1.025);
+}
+
+.text{
+  padding-bottom: 0.5rem;
+}
+
+.tecnologies{
+  padding-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tecnologies p{
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  border-radius: 6.25rem;
+}
+
+.projectsWhite .tecnologies p{
+  color: rgb(19, 19, 19);
+  background-color: #c5b6ce;
+}
+
+.projectsBlack .tecnologies p{
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
+}
+
+.title{
+  padding-bottom: 0.5rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+
+
 /* WORK EXPERIENCE */
 #workexperience{
   padding-top: 10rem;
@@ -499,6 +585,7 @@ header a:hover{
   max-width: 30rem;
   border-radius: 0.625rem;
   transition: 0.3s;
+  will-change: transform;
 }
 
 #workexperience li:hover{
@@ -507,8 +594,7 @@ header a:hover{
 
 
 /* SKILLS */
-/* SKILLS */
-#skills {
+/* #skills {
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
@@ -592,12 +678,12 @@ header a:hover{
 .skills-list p {
   padding: 0.4rem 0.8rem;
   font-size: 0.9rem;
-}
+} */
 
 
 
 /* EDUCATION */
-#education{
+/* #education{
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
@@ -632,91 +718,7 @@ header a:hover{
 .bodyBlack #education li{
   background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
-}
-
-
-/* PROJECTS */
-#projects {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  text-align: center;
-}
-
-.projectsWhite li{
-  background: #fff;
-  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
-}
-
-.projectsBlack .text{
-  color: rgb(161, 161, 161);
-}
-
-.projectsBlack li{
-  background: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
-}
-
-#projects a{
-  transition: color 0.3s linear;
-}
-
-#projects a:hover{
-  color: slateblue;
-}
-
-#projects ul{
-  list-style: none;
-  margin-top: 1rem;
-  text-align: start;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#projects li{
-  height: fit-content;
-  padding: 1rem;
-  max-width: 30rem;
-  border-radius: 0.625rem;
-  transition: 0.3s;
-}
-
-#projects li:hover{
-  transform: scale(1.025);
-}
-
-.text{
-  padding-bottom: 0.5rem;
-}
-
-.tecnologies{
-  padding-top: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-
-.tecnologies p{
-  padding: 0.3rem;
-  font-size: 0.8rem;
-  border-radius: 6.25rem;
-}
-
-.projectsWhite .tecnologies p{
-  color: rgb(19, 19, 19);
-  background-color: #c5b6ce;
-}
-
-.projectsBlack .tecnologies p{
-  color: rgb(236, 236, 236);
-  background-color: #443f47;
-}
-
-.title{
-  padding-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
+} */
 
 
 
