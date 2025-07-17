@@ -595,7 +595,9 @@ header a{
 }
 
 #projects li{
-  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
@@ -606,10 +608,17 @@ header a{
 #projects li img{
   width: 100%;
   max-height: 15.5rem;
+  filter: brightness(50%) blur(0.05rem);
+  transition: filter 0.3s ease-in-out;
+  will-change: filter;
 }
 
 #projects li:hover{
   transform: translateY(-0.5rem) scale(1.025);
+}
+
+#projects li:hover img{
+  filter: brightness(100%);
 }
 
 .bodyBlack #projects li:hover,
@@ -634,9 +643,8 @@ header a{
   border-radius: 6.25rem;
 }
 
-
 .title{
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0;
   font-size: 1.3rem;
   font-weight: bold;
 }
