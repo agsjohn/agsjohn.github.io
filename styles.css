@@ -28,26 +28,6 @@ body{
   transition: color 0.5s linear;
 }
 
-.bodyWhite {
-  background-color: rgb(230, 230, 230);
-  color: #000000;
-}
-
-.bodyWhite a{
-  text-decoration: none;
-  color: black;
-}
-
-.bodyBlack {
-  background-color: rgb(25, 25, 25);
-  color: white;
-}
-
-.bodyBlack a{
-  text-decoration: none;
-  color: white;
-}
-
 .bg-grid {
   position: fixed;
   top: 0;
@@ -79,20 +59,36 @@ h1{
   font-size: 3rem;
 }
 
-.backgroundWhite{
-  background-color: rgb(235, 235, 235);
+/* Tema Escuro */
+.bodyBlack section{
+  border-top: solid 0.1rem white;
 }
-
 .backgroundBlack{
   background-color: rgb(20, 20, 20);
 }
+.bodyBlack {
+  background-color: rgb(25, 25, 25);
+  color: white;
+}
+.bodyBlack a{
+  text-decoration: none;
+  color: white;
+}
 
+/* Tema Claro */
 .bodyWhite section{
   border-top: solid 0.1rem black;
 }
-
-.bodyBlack section{
-  border-top: solid 0.1rem white;
+.backgroundWhite{
+  background-color: rgb(235, 235, 235);
+}
+.bodyWhite {
+  background-color: rgb(230, 230, 230);
+  color: #000000;
+}
+.bodyWhite a{
+  text-decoration: none;
+  color: black;
 }
 
 
@@ -118,14 +114,6 @@ header svg{
   height: 2rem;
 }
 
-.headerWhite svg{
-  filter: invert();
-}
-
-.headerBlack svg{
-  filter: none;
-}
-
 .nav {
   display: flex;
   justify-content: center; 
@@ -141,11 +129,12 @@ header svg{
   text-decoration: none;
   color: white;
   text-decoration: none;
+  transition: 0.4s ease;
+  will-change: transform;
 }
 
 .nav>a:hover {
   transform: scale(1.1);
-  transition: 0.4s ease;
   cursor: pointer;
 }
 
@@ -187,33 +176,14 @@ header svg{
   display: none;
 }
 
-.headerWhite{
-  background-color: white;
-  border-bottom: solid 0.1rem black;
-}
-
-.headerWhite a{
-  color: black;
-}
-
-.headerBlack{
-  background-color: black;
-  border-bottom: solid 0.1rem white;
-}
-
-.headerBlack a{
-  color: white;
-}
-
 header a{
-  transition: color 0.3s;
   font-weight: bold;
   text-decoration: none;
 }
 
-header a:hover{
+.bodyBlack #mainHeader a:hover,
+.bodyWhite #mainHeader a:hover{
   color: slateblue;
-  font-weight: bold;
 }
 
 .divTheme {
@@ -238,24 +208,44 @@ header a:hover{
   transform: scale(1.025);
 }
 
-.bodyWhite .themeToggle {
-  background-image: url("files/moon.png");
-  background-size: 0.9rem;
-}
-
-.bodyWhite .themeToggle:hover {
-  box-shadow: 0 0 1rem #8208b2;
-}
-
+/* Tema Escuro */
 .bodyBlack .themeToggle {
   background-image: url("files/sun.png");
   background-size: 1.2rem; 
   filter: invert();
 }
-
 .bodyBlack .themeToggle:hover{
   box-shadow: 0 0 1rem rgb(56, 178, 8)
-} 
+}
+.bodyBlack #mainHeader{
+  background-color: black;
+  border-bottom: solid 0.1rem white;
+}
+.bodyBlack #mainHeader a{
+  color: white;
+}
+.bodyBlack #mainHeader svg{
+  filter: none;
+}
+
+/* Tema Claro */
+.bodyWhite .themeToggle {
+  background-image: url("files/moon.png");
+  background-size: 0.9rem;
+}
+.bodyWhite .themeToggle:hover {
+  box-shadow: 0 0 1rem #8208b2;
+}
+.bodyWhite #mainHeader svg{
+  filter: invert();
+}
+.bodyWhite #mainHeader{
+  background-color: white;
+  border-bottom: solid 0.1rem black;
+}
+.bodyWhite #mainHeader a{
+  color: black;
+}
 
 
 
@@ -331,13 +321,16 @@ header a:hover{
   width: 100%;
 }
 
-.headerBlack .sidebar h2{
+/* Tema Escuro */
+.bodyBlack header .sidebar h2{
   color: white;
 }
 
-.headerWhite .sidebar h2{
+/* Tema Claro */
+.bodyWhite header .sidebar h2{
   color: black;
 }
+
 
 
 /* PRESENTATION */
@@ -358,32 +351,6 @@ header a:hover{
 
 #presentation h1{
   font-size: 4rem;
-}
-
-.presentationWhite h2{
-  color: #343a40;
-}
-
-.presentationWhite .buttonLink{
-  background: white;
-  color: black;
-}
-
-.presentationWhite .presentatinoText{
-  color: #343a40;
-}
-
-.presentationBlack h2{
-  color: #ced5db;
-}
-
-.presentationBlack .presentatinoText{
-  color: #b9b9b9;
-}
-
-.presentationBlack .buttonLink{
-  background: rgb(15, 15, 15);
-  color: white;
 }
 
 #presentation h2 {
@@ -416,14 +383,6 @@ header a:hover{
   height: fit-content;
 }
 
-.presentationBlack .myImage img{
-  background-color: rgb(19, 19, 19);
-}
-
-.presentationWhite .myImage img{
-  background-color: rgb(231, 231, 231);
-}
-
 .myImage img{
   width: 25vw;
   height: 25vw;
@@ -438,90 +397,106 @@ header a:hover{
   box-shadow: 0 0 2rem #8208b2;
 }
 
+/* Tema Escuro */
+.bodyBlack #presentation .myImage img{
+  background-color: rgb(19, 19, 19);
+}
+.bodyBlack #presentation h2{
+  color: #ced5db;
+}
+.bodyBlack #presentation .presentatinoText{
+  color: #b9b9b9;
+}
+.bodyBlack #presentation .buttonLink{
+  background: rgb(15, 15, 15);
+  color: white;
+}
+
+/* Tema Claro */
+.bodyWhite #presentation h2{
+  color: #343a40;
+}
+.bodyWhite #presentation .buttonLink{
+  background: white;
+  color: black;
+}
+.bodyWhite #presentation .presentatinoText{
+  color: #343a40;
+}
+.bodyWhite #presentation .myImage img{
+  background-color: rgb(231, 231, 231);
+}
 
 
-/* PROJECTS */
-#projects {
+
+/* SKILLS */
+#skills {
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
 
-.projectsWhite li{
-  background: #fff;
-  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
-}
-
-.projectsBlack .text{
-  color: rgb(161, 161, 161);
-}
-
-.projectsBlack li{
-  background: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
-}
-
-#projects a{
-  transition: color 0.3s linear;
-}
-
-#projects a:hover{
+#skills h3{
+  margin-top: 1rem;
   color: slateblue;
 }
 
-#projects ul{
+#skills ul{
   list-style: none;
   margin-top: 1rem;
-  text-align: start;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
 
-#projects li{
+#skills li{
+  display: flex;
   height: fit-content;
-  padding: 1rem;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.5rem;
   max-width: 30rem;
   border-radius: 0.625rem;
   transition: 0.3s;
   will-change: transform;
 }
 
-#projects li:hover{
-  transform: scale(1.025);
+#skills li:hover{
+  cursor: default;
+  transform: translateY(-0.5rem) scale(1.01);
 }
 
-.text{
-  padding-bottom: 0.5rem;
+#skills li svg{
+  width: 1.7rem;
+  height: 1.7rem;
 }
 
-.tecnologies{
-  padding-top: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+/* Tema Escuro */
+.bodyBlack #skills h2{
+  color: #ced5db;
+}
+.bodyBlack #skills li{
+  background: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
+}
+.bodyBlack #skills li:hover {
+  box-shadow: 0 0.2rem 1rem #8208b2;
 }
 
-.tecnologies p{
-  padding: 0.3rem;
-  font-size: 0.8rem;
-  border-radius: 6.25rem;
+/* Tema Claro */
+.bodyWhite #skills h2{
+  color: #343a40;
 }
-
-.projectsWhite .tecnologies p{
-  color: rgb(19, 19, 19);
-  background-color: #c5b6ce;
+.bodyWhite #skills li svg{
+  filter: invert();
 }
-
-.projectsBlack .tecnologies p{
-  color: rgb(236, 236, 236);
-  background-color: #443f47;
+.bodyWhite #skills li:hover {
+  box-shadow: 0 0.2rem 1rem #8208b2;
 }
-
-.title{
-  padding-bottom: 0.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
+.bodyWhite #skills li{
+  background: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 }
 
 
@@ -531,28 +506,6 @@ header a:hover{
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
-}
-
-.workWhite h4{
-  color: rgb(68, 68, 68);
-}
-
-.workWhite li{
-  background: #fff;
-  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
-}
-
-.workBlack p{
-  color: rgb(161, 161, 161);
-}
-
-.workBlack h4{
-  color: rgb(189, 189, 189);
-}
-
-.workBlack li{
-  background: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
 }
 
 #workexperience h2{
@@ -588,137 +541,218 @@ header a:hover{
   will-change: transform;
 }
 
-#workexperience li:hover{
-  transform: scale(1.025);
+.bodyBlack #workexperience li:hover,
+.bodyWhite #workexperience li:hover{
+  transform: translateY(-0.5rem) scale(1.025);
+  box-shadow: 0 0.2rem 1rem #8208b279;
 }
 
-
-/* SKILLS */
-/* #skills {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  text-align: center;
+/* Tema Escuro */
+.bodyBlack #workexperience p{
+  color: rgb(161, 161, 161);
 }
-
-#skills > p {
-    margin-bottom: 2rem;
+.bodyBlack #workexperience h4{
+  color: rgb(189, 189, 189);
 }
-
-.skills-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin: 0 auto;
-  max-width: 60rem;
-  padding: 0 1rem;
-}
-
-.skill-category {
-  width: 18rem;
-  height: 9rem;
-  padding: 1.5rem;
-  border-radius: 0.625rem;
-  transition: 0.3s;
-}
-
-.skill-category:hover {
-  transform: scale(1.025);
-}
-
-.skillsBlack .skill-category {
-  background-color: rgb(15, 15, 15);
+.bodyBlack #workexperience li{
+  background: rgb(15, 15, 15);
   box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
 }
 
-.skillsWhite .skill-category {
-  background-color: #fff;
+/* Tema Claro */
+.bodyWhite #workexperience h4{
+  color: rgb(68, 68, 68);
+}
+.bodyWhite #workexperience li{
+  background: #fff;
   box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
 }
 
-#skills h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: slateblue;
-  text-align: center;
-}
-
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  justify-content: center;
-}
-
-.skills-list p {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border-radius: 6.25rem;
-  margin-bottom: 0; 
-}
-
-.skillsWhite .skills-list p {
-  color: rgb(19, 19, 19);
-  background-color: #e2d9e8;
-}
-
-.skillsBlack .skills-list p {
-  color: rgb(236, 236, 236);
-  background-color: #443f47;
-}
-
-.skill-category {
-  padding: 1rem;
-}
-#skills h2 {
-  font-size: 1.2rem;
-}
-.skills-list p {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.9rem;
-} */
 
 
-
-/* EDUCATION */
-/* #education{
+/* PROJECTS */
+#projects {
   padding-top: 10rem;
   padding-bottom: 10rem;
   text-align: center;
 }
 
-#education ul{
-  padding-top: 1rem;
+#projects a{
+  transition: color 0.3s linear;
+}
+
+#projects a:hover{
+  color: slateblue;
+}
+
+#projects ul{
   list-style: none;
+  margin-top: 1rem;
+  text-align: start;
   display: flex;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
   gap: 1rem;
 }
 
-#education li{
-  max-width: fit-content;
-  border-radius: 0.625rem;
+#projects li{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 1rem;
+  max-width: 30rem;
+  border-radius: 0.625rem;
   transition: 0.3s;
   will-change: transform;
 }
 
-#education li:hover{
-  transform: scale(1.025);
+#projects li img{
+  width: 100%;
+  max-height: 15.5rem;
+  filter: brightness(50%) blur(0.05rem);
+  transition: filter 0.3s ease-in-out;
+  will-change: filter;
 }
 
-.bodyWhite #education li{
+#projects li:hover{
+  transform: translateY(-0.5rem) scale(1.025);
+}
+
+#projects li:hover img{
+  filter: brightness(100%);
+}
+
+.bodyBlack #projects li:hover,
+.bodyWhite #projects li:hover{
+  box-shadow: 0 0.2rem 1rem #8208b279;
+}
+
+.text{
+  padding-bottom: 0.5rem;
+}
+
+.tecnologies{
+  padding-top: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tecnologies p{
+  padding: 0.3rem;
+  font-size: 0.8rem;
+  border-radius: 6.25rem;
+}
+
+.title{
+  padding: 0.5rem 0;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+/* Tema Escuro */
+.bodyBlack #projects .tecnologies p{
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
+}
+.bodyBlack #projects .text{
+  color: rgb(161, 161, 161);
+}
+.bodyBlack #projects li{
+  background: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
+}
+
+/* Tema Claro */
+.bodyWhite #projects .tecnologies p{
+  color: rgb(19, 19, 19);
+  background-color: #c5b6ce;
+}
+.bodyWhite #projects li{
   background: #fff;
   box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
 }
 
-.bodyBlack #education li{
+
+
+/* EDUCATION */
+#education {
+  padding: 8rem 2rem;
+  text-align: center;
+}
+
+#education h1 {
+  margin-bottom: 3rem;
+}
+
+.education-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.education-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 600px;
+  width: 100%;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+  will-change: transform;
+}
+
+.education-item:hover {
+  transform: translateY(-0.5rem) scale(1.01);
+}
+
+.education-icon img {
+  width: 3rem;
+  height: 3rem;
+  margin-top: 0.1rem;
+}
+
+.education-content h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.education-content h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  color: slateblue;
+}
+
+.education-details {
+  font-size: 0.9rem;
+}
+
+/* Tema escuro */
+.bodyBlack .education-item {
   background: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
-} */
+  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.1);
+}
+.bodyBlack .education-item:hover {
+  box-shadow: 0 0.2rem 1rem #8208b279;
+}
+.bodyBlack .education-details {
+  color: #b9b9b9;
+}
+
+/* Tema claro */
+.bodyWhite .education-item {
+  background: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
+}
+.bodyWhite .education-item:hover {
+  box-shadow: 0 0.2rem 1rem #8208b279;
+}
+.bodyWhite .education-details {
+  color: #6c757d;
+}
 
 
 
@@ -729,20 +763,6 @@ header a:hover{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.contactWhite .contactDiv{
-  background: #fff;
-  box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
-}
-
-.contactBlack img{
-  filter: invert(100%);
-}
-
-.contactBlack .contactDiv{
-  background-color: rgb(15, 15, 15);
-  box-shadow: 0 0rem 0.5rem rgba(255, 255, 255, 0.15);
 }
 
 .contactDiv{
@@ -756,8 +776,10 @@ header a:hover{
   will-change: transform;
 }
 
-#contact>div:hover{
+.bodyBlack #contact>div:hover,
+.bodyWhite #contact>div:hover{
   transform: scale(1.025);
+  box-shadow: 0 0 1rem #8208b279;
 }
 
 #contact a{
@@ -804,6 +826,57 @@ header a:hover{
   color: #6c757d;
 }
 
+/* Tema Escuro */
+.bodyBlack #contact .contactDiv{
+  background-color: rgb(15, 15, 15);
+  box-shadow: 0 0rem 0.5rem rgba(255, 255, 255, 0.15);
+}
+.bodyBlack #contact img{
+  filter: invert(100%);
+}
+
+/* Tema Claro */
+.bodyWhite #contact .contactDiv{
+  background: #fff;
+  box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
+}
+
+
+
+/* TOP BUTTON */
+.topButton{
+  margin-top: -2.4rem;
+  margin-bottom: -0.5rem;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+  height: fit-content;
+  width: 100%;
+}
+
+.topButton svg{
+  background-color: black;
+  border: 0.15rem solid white;
+  border-radius: 50%;
+  width: 2.5rem;
+  height: 2.5rem;
+  transition: 0.3s;
+}
+
+.topButton svg:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 1rem #8208b2;
+}
+
+/* Tema Claro */
+.bodyWhite .topButton svg{
+  filter: invert();
+}
+.bodyWhite .topButton svg:hover{
+  box-shadow: 0 0 1rem #5edb0b;
+}
+
 
 
 /* FOOTER */
@@ -845,43 +918,6 @@ footer {
   transform: scale(1.1);
 }
 
-.footerWhite{
-  border-top: solid black 0.2rem;
-}
-
-.footerWhite .icon{
-  background-color: rgb(231, 231, 231);
-  border: solid 0.1rem black;
-  color: white;
-}
-
-.footerWhite .icon:hover{
-  box-shadow: 0 0 1rem #a00bdb;
-}
-
-.footerWhite .footerPrincipalName{
-  color: black;
-}
-
-.footerBlack{
-  border-top: solid white 0.2rem;
-}
-
-.footerBlack .icon{
-  background-color: rgb(231, 231, 231);
-  border: solid 0.1rem black;
-  filter: invert(100%);
-  color: black;
-}
-
-.footerBlack .icon:hover{
-  box-shadow: 0 0 1rem #5edb0b;
-}
-
-.footerBlack .footerPrincipalName{
-  color: white;
-}
-
 .footerName,
 .copyright{
   width: 25%;
@@ -910,6 +946,39 @@ footer {
 
 .gmailIcon{
   background-image: url("files/gmail.png");
+}
+
+/* Tema Claro */
+.bodyWhite #mainFooter{
+  border-top: solid black 0.2rem;
+}
+.bodyWhite #mainFooter .icon{
+  background-color: rgb(231, 231, 231);
+  border: solid 0.1rem black;
+  color: white;
+}
+.bodyWhite #mainFooter .icon:hover{
+  box-shadow: 0 0 1rem #a00bdb;
+}
+.bodyWhite #mainFooter .footerPrincipalName{
+  color: black;
+}
+
+/* Tema Escuro */
+.bodyBlack #mainFooter{
+  border-top: solid white 0.2rem;
+}
+.bodyBlack #mainFooter .icon{
+  background-color: rgb(231, 231, 231);
+  border: solid 0.1rem black;
+  filter: invert(100%);
+  color: black;
+}
+.bodyBlack #mainFooter .icon:hover{
+  box-shadow: 0 0 1rem #5edb0b;
+}
+.bodyBlack #mainFooter .footerPrincipalName{
+  color: white;
 }
 
 
@@ -975,6 +1044,12 @@ footer {
   }
   .menu-button{
     display: flex;
+  }
+
+  
+  /* SKILLS */
+  #skills h2 {
+    font-size: 1rem;
   }
 
 
