@@ -468,7 +468,8 @@ header a:hover{
 }
 
 #projects li:hover{
-  transform: scale(1.025);
+  transform: translateY(-0.5rem) scale(1.025);
+  box-shadow: 0 0.2rem 1rem #8208b279;
 }
 
 .text{
@@ -561,7 +562,8 @@ header a:hover{
 }
 
 #workexperience li:hover{
-  transform: scale(1.025);
+  transform: translateY(-0.5rem) scale(1.025);
+  box-shadow: 0 0.2rem 1rem #8208b279;
 }
 
 /* Tema Escuro */
@@ -721,7 +723,7 @@ header a:hover{
   box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.1);
 }
 .bodyBlack .education-item:hover {
-  box-shadow: 0 0.2rem 1rem #8208b2;
+  box-shadow: 0 0.2rem 1rem #8208b279;
 }
 .bodyBlack .education-details {
   color: #b9b9b9;
@@ -733,7 +735,7 @@ header a:hover{
   box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.1);
 }
 .bodyWhite .education-item:hover {
-  box-shadow: 0 0.2rem 1rem #8208b2;
+  box-shadow: 0 0.2rem 1rem #8208b279;
 }
 .bodyWhite .education-details {
   color: #6c757d;
@@ -763,6 +765,7 @@ header a:hover{
 
 #contact>div:hover{
   transform: scale(1.025);
+  box-shadow: 0 0 1rem #8208b279;
 }
 
 #contact a{
