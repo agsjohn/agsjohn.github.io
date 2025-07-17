@@ -130,7 +130,6 @@ header svg{
   color: white;
   text-decoration: none;
   transition: 0.4s ease;
-  will-change: transform;
 }
 
 .nav>a:hover {
@@ -201,11 +200,10 @@ header a{
   cursor: pointer;
   border: 0.12rem black solid;
   transition: 0.3s ease; 
-  will-change: transform;
 }
 
 .themeToggle:hover {
-  transform: scale(1.025);
+  transform: scale(1.02);
 }
 
 /* Tema Escuro */
@@ -388,8 +386,7 @@ header a{
   height: 25vw;
   border-radius: 50%;
   border: 0.15rem solid slateblue;
-  transition: 0.5s;
-  will-change: transform;
+  transition: 0.5s ease;
 }
 
 .myImage img:hover {
@@ -458,8 +455,7 @@ header a{
   padding: 0.5rem;
   max-width: 30rem;
   border-radius: 0.625rem;
-  transition: 0.3s;
-  will-change: transform;
+  transition: 0.3s ease;
 }
 
 #skills li:hover{
@@ -537,13 +533,15 @@ header a{
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
-  transition: 0.3s;
-  will-change: transform;
+  transition: 0.3s ease;
+}
+
+#workexperience li:hover{
+  transform: translateY(-0.5rem) scale(1.01);
 }
 
 .bodyBlack #workexperience li:hover,
 .bodyWhite #workexperience li:hover{
-  transform: translateY(-0.5rem) scale(1.025);
   box-shadow: 0 0.2rem 1rem #8208b279;
 }
 
@@ -601,8 +599,7 @@ header a{
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
-  transition: 0.3s;
-  will-change: transform;
+  transition: 0.3s ease;
 }
 
 #projects li img{
@@ -610,11 +607,10 @@ header a{
   max-height: 15.5rem;
   filter: brightness(50%) blur(0.05rem);
   transition: filter 0.3s ease-in-out;
-  will-change: filter;
 }
 
 #projects li:hover{
-  transform: translateY(-0.5rem) scale(1.025);
+  transform: translateY(-0.5rem) scale(1.01);
 }
 
 #projects li:hover img{
@@ -700,12 +696,11 @@ header a{
   padding: 1.5rem;
   border-radius: 0.625rem;
   text-align: left;
-  transition: transform 0.3s, box-shadow 0.3s;
-  will-change: transform;
+  transition: 0.3s ease;
 }
 
 .education-item:hover {
-  transform: translateY(-0.5rem) scale(1.01);
+  transform: translateY(-0.3rem) scale(1.05);
 }
 
 .education-icon img {
@@ -772,13 +767,15 @@ header a{
 #contact div{
   width: 50rem;
   padding: 1rem;
-  transition: 0.3s;
-  will-change: transform;
+  transition: 0.3s ease;
+}
+
+#contact div:hover{
+  transform: translateY(-0.1rem) scale(1.01);
 }
 
 .bodyBlack #contact>div:hover,
 .bodyWhite #contact>div:hover{
-  transform: scale(1.025);
   box-shadow: 0 0 1rem #8208b279;
 }
 
@@ -910,8 +907,7 @@ footer {
   background-size: 1.9rem;
   background-repeat: no-repeat;
   background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  will-change: transform;
+  transition: 0.3s ease;
 }
 
 .icon:hover {
