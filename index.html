@@ -24,11 +24,11 @@
         </li>
       </div>
       <li onclick=hideSidebar()><a href="#presentation" class="hideOnMobile"><h2>Início</h2></a></li>
-      <li onclick=hideSidebar()><a href="#projects" class="hideOnMobile"><h2>Projetos</h2></a></li>
+      <li onclick=hideSidebar()><a href="#skills" class="hideOnMobile"><h2>Habilidades</h2></a></li>
       <li onclick=hideSidebar()><a href="#workexperience" class="hideOnMobile"><h2>Experiência</h2></a></li>
+      <li onclick=hideSidebar()><a href="#projects" class="hideOnMobile"><h2>Projetos</h2></a></li>
+      <li onclick=hideSidebar()><a href="#education" class="hideOnMobile"><h2>Formação</h2></a></li>
       <li onclick=hideSidebar()><a href="#contact" class="hideOnMobile"><h2>Contato</h2></a></li>
-      <!-- <li onclick=hideSidebar()><a href="#education" class="hideOnMobile"><h2>Formação Acadêmica</h2></a></li> -->
-      <!-- <li onclick=hideSidebar()><a href="#skills" class="hideOnMobile"><h2>Habilidades</h2></a></li> -->
     </ul>
     <li class="menu-button" onclick=showSidebar()>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
@@ -43,8 +43,8 @@
         <a href="#skills"><h2>Habilidades</h2></a>
         <a href="#workexperience"><h2>Experiência</h2></a>
         <a href="#projects"><h2>Projetos</h2></a>
+        <a href="#education"><h2>Formação</h2></a>
         <a href="#contact"><h2>Contato</h2></a>
-        <!-- <a href="#education"><h2>Formação Acadêmica</h2></a> -->
     </div>
 
     <div class="header-right-content hideOnMobile">
@@ -191,19 +191,35 @@
     </ul>
   </section>
 
-  <!-- <section id="education">
+  <section id="education">
     <h1>Formação Acadêmica</h1>
-    <ul>
-      <li>
-        <p>Bacharelado em Ciência da Computação | UniRitter | 4º semestre | dez/2027</p>
-      </li>
-      <li>
-        <p>Técnico em Informática | Escola Técnica José César de Mesquita | mar/2023 - dez/2024</p>
-      </li>
-    </ul>
-  </section> -->
+    <div class="education-container">
+      
+      <div class="education-item">
+        <div class="education-icon">
+          <img src="files/UniRitterLogo.png">
+        </div>
+        <div class="education-content">
+          <h2>Bacharelado em Ciência da Computação</h2>
+          <h3>UniRitter</h3>
+          <p class="education-details">4º semestre &bull; Conclusão prevista: Dez/2027</p>
+        </div>
+      </div>
+      
+      <div class="education-item">
+        <div class="education-icon">
+          <img src="files/MesquitaLogo.png">
+        </div>
+        <div class="education-content">
+          <h2>Técnico em Informática</h2>
+          <h3>Escola Técnica José César de Mesquita</h3>
+          <p class="education-details">Mar/2023 - Dez/2024 &bull; Concluído</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <section id="contact" class="contactBlack">
+  <section id="contact" class="contactBlack backgroundBlack">
     <h1>Entre em contato</h1>
     <div class="contactDiv">
       <ul>
@@ -245,7 +261,7 @@
     </a>
   </div>
 
-  <footer id="mainFooter" class="footerBlack backgroundBlack">
+  <footer id="mainFooter" class="footerBlack">
     <div class="footerName">
       <p class="footerPrincipalName">João Vitor Martins</p>
       <p>Desenvolvedor Backend e Mobile</p>
