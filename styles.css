@@ -487,6 +487,11 @@ header a:hover{
   will-change: transform;
 }
 
+#projects li img{
+  width: 100%;
+  max-height: 15.5rem;
+}
+
 #projects li:hover{
   transform: scale(1.025);
 }
