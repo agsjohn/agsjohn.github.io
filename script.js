@@ -1,84 +1,54 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleButton1 = document.getElementById('themeToggle1');
-    const themeToggleButton2 = document.getElementById('themeToggle2');
+    const themeToggleButtons = document.querySelectorAll('.themeToggle');
     const body = document.body;
-    const mainHeader = document.getElementById('mainHeader');
-    const presentation = document.getElementById('presentation');
-    const workexperience = document.getElementById('workexperience');
-    const projects = document.getElementById('projects');
-    const contact = document.getElementById('contact');
-    const footer = document.getElementById('mainFooter');
 
-    function whiteTheme(){
-        mainHeader.classList.remove('headerWhite');
-        mainHeader.classList.add('headerBlack');
-        presentation.classList.remove('presentationWhite');
-        presentation.classList.add('presentationBlack');
-        workexperience.classList.remove('workWhite');
-        workexperience.classList.add('workBlack');
-        projects.classList.remove('projectsWhite');
-        projects.classList.add('projectsBlack');
-        contact.classList.remove('contactWhite');
-        contact.classList.add('contactBlack');
-        footer.classList.remove('footerWhite');
-        footer.classList.add('footerBlack');
+    function toggleAllThemeClasses() {
+        body.classList.toggle('bodyBlack');
+        body.classList.toggle('bodyWhite');
+
+        const themedElements = document.querySelectorAll(':not(body)[class*="Black"], :not(body)[class*="White"]');
+
+        themedElements.forEach(element => {
+            const classes = Array.from(element.classList);
+            classes.forEach(className => {
+                if (className.endsWith('Black')) {
+                    const newClass = className.replace('Black', 'White');
+                    element.classList.remove(className);
+                    element.classList.add(newClass);
+                } else if (className.endsWith('White')) {
+                    const newClass = className.replace('White', 'Black');
+                    element.classList.remove(className);
+                    element.classList.add(newClass);
+                }
+            });
+        });
     }
 
-    function blackTheme(){
-        mainHeader.classList.remove('headerBlack');
-        mainHeader.classList.add('headerWhite');
-        presentation.classList.remove('presentationBlack');
-        presentation.classList.add('presentationWhite');
-        workexperience.classList.remove('workBlack');
-        workexperience.classList.add('workWhite');
-        projects.classList.remove('projectsBlack');
-        projects.classList.add('projectsWhite');
-        contact.classList.remove('contactBlack');
-        contact.classList.add('contactWhite');
-        footer.classList.remove('footerBlack');
-        footer.classList.add('footerWhite');
+    function applyThemeToggle() {
+        toggleAllThemeClasses();
+        localStorage.setItem('theme', body.className);
     }
 
-    function toggleTheme() {
-        if (body.classList.contains('bodyWhite')) {
-            body.classList.remove('bodyWhite');
-            body.classList.add('bodyBlack');
-            whiteTheme();
-
-            localStorage.setItem('theme', 'bodyBlack'); 
-        } else {
-            body.classList.remove('bodyBlack');
-            body.classList.add('bodyWhite');
-            blackTheme();
-            
-            localStorage.setItem('theme', 'bodyWhite'); 
-        }
-    }
-
+    // --- LÓGICA DE CARREGAMENTO DO TEMA (MELHORADA) ---
     const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        body.classList.remove('bodyWhite', 'bodyBlack'); 
-        body.classList.add(savedTheme);
-
-        if (savedTheme === 'bodyBlack') {
-            whiteTheme();
-        } else {
-            blackTheme();
-        }
+    if (savedTheme && savedTheme !== body.className) {
+        toggleAllThemeClasses();
     }
-
-    themeToggleButton1.addEventListener('click', toggleTheme);
-    themeToggleButton2.addEventListener('click', toggleTheme);
+    
+    themeToggleButtons.forEach(button => {
+        button.addEventListener('click', applyThemeToggle);
+    });
 });
 
-function showSidebar(){
+
+function showSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const menubutton = document.querySelector('.menu-button svg');
     sidebar.style.display = 'flex';
     menubutton.style.display = "none";
 }
 
-function hideSidebar(){
+function hideSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const menubutton = document.querySelector('.menu-button svg');
     sidebar.style.display = 'none';
@@ -86,8 +56,15 @@ function hideSidebar(){
 }
 
 window.addEventListener('resize', function() {
-    const currentWidth = window.innerWidth;
-    if(currentWidth > 800){
+    if (window.innerWidth > 767) {
         hideSidebar();
     }
+});
+
+document.addEventListener('mousemove', (e) => {
+    const glow = document.getElementById('cursor-glow');
+    window.requestAnimationFrame(() => {
+        glow.style.left = `${e.clientX}px`;
+        glow.style.top = `${e.clientY}px`;
+    });
 });

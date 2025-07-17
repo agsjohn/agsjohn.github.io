@@ -62,25 +62,37 @@ body{
   pointer-events: none;
 }
 
-.bg-glow {
+#cursor-glow {
   position: fixed;
   width: 60vw;
   height: 60vw;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(130, 8, 178, 0.15) 0%, rgba(79, 70, 229, 0.05) 50%, transparent 70%);
   filter: blur(60px);
+  transform: translate(-50%, -50%); 
   z-index: -1;
   pointer-events: none;
+  transition: width 0.2s ease-out, height 0.2s ease-out;
 }
 
-.bg-glow.top-right {
-  top: -20%;
-  right: -20%;
+h1{
+  font-size: 3rem;
 }
 
-.bg-glow.bottom-left {
-  bottom: -20%;
-  left: -20%;
+.backgroundWhite{
+  background-color: rgb(235, 235, 235);
+}
+
+.backgroundBlack{
+  background-color: rgb(20, 20, 20);
+}
+
+.bodyWhite section{
+  border-top: solid 0.1rem black;
+}
+
+.bodyBlack section{
+  border-top: solid 0.1rem white;
 }
 
 
@@ -219,6 +231,11 @@ header a:hover{
   cursor: pointer;
   border: 0.12rem black solid;
   transition: 0.3s ease; 
+  will-change: transform;
+}
+
+.themeToggle:hover {
+  transform: scale(1.025);
 }
 
 .bodyWhite .themeToggle {
@@ -325,17 +342,18 @@ header a:hover{
 
 /* PRESENTATION */
 #presentation{
-  margin: 0;
+  margin: 0 5%;
   display: flex;
-  justify-content: start;
+  justify-content: space-around;
+  align-items: center;
+  height: 60rem;
+  gap: 2rem;
 }
 
 #presentation div{
-  max-width: 60rem;
-  margin-left: 8vw;
-  margin-top: 16rem;
-  margin-bottom: 26rem;
-  border-radius: 1rem;
+  margin-top: -5rem;
+  width: max-content;
+  max-width: 50rem;
 }
 
 #presentation h1{
@@ -373,7 +391,7 @@ header a:hover{
 }
 
 #presentation p{
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 .buttonLink {
@@ -393,80 +411,31 @@ header a:hover{
   box-shadow: 0 0.2rem 1rem #8208b2;
 }
 
-
-
-/* WORK EXPERIENCE */
-#workexperience{
-  padding-top: 10rem;
-  padding-bottom: 10rem;
-  text-align: center;
-}
-
-.workWhite{
-  border-top: solid 0.1rem black;
-  background-color: rgb(235, 235, 235);
-}
-
-.workWhite h4{
-  color: rgb(68, 68, 68);
-}
-
-.workWhite li{
-  background: #fff;
-  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
-}
-
-.workBlack{
-  border-top: solid 0.1rem white;
-  background-color: rgb(20, 20, 20);
-}
-
-.workBlack p{
-  color: rgb(161, 161, 161);
-}
-
-.workBlack h4{
-  color: rgb(189, 189, 189);
-}
-
-.workBlack li{
-  background: rgb(15, 15, 15);
-  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
-}
-
-#workexperience h1{
-  font-size: 3rem;
-}
-
-#workexperience h2{
-  padding-bottom: 0.3rem;
-  font-size: 1.2rem;
-}
-
-#workexperience h3{
-  padding-bottom: 0.3rem;
-  font-size: 1.1rem;
-  color: slateblue;
-}
-
-#workexperience h4{
-  padding-bottom: 0.3rem;
-}
-
-#workexperience ul{
-  list-style: none;
-  margin-top: 1rem;
-  text-align: start;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-#workexperience li{
+.myImage{
+  width: fit-content;
   height: fit-content;
-  padding: 1rem;
-  max-width: 30rem;
-  border-radius: 0.625rem;
+}
+
+.presentationBlack .myImage img{
+  background-color: rgb(19, 19, 19);
+}
+
+.presentationWhite .myImage img{
+  background-color: rgb(231, 231, 231);
+}
+
+.myImage img{
+  width: 25vw;
+  height: 25vw;
+  border-radius: 50%;
+  border: 0.15rem solid slateblue;
+  transition: 0.5s;
+  will-change: transform;
+}
+
+.myImage img:hover {
+  transform: scale(1.025);
+  box-shadow: 0 0 2rem #8208b2;
 }
 
 
@@ -478,17 +447,9 @@ header a:hover{
   text-align: center;
 }
 
-.projectsWhite{
-  border-top: solid 0.1rem black;
-}
-
 .projectsWhite li{
   background: #fff;
   box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
-}
-
-.projectsBlack{
-  border-top: solid 0.1rem white;
 }
 
 .projectsBlack .text{
@@ -508,10 +469,6 @@ header a:hover{
   color: slateblue;
 }
 
-#projects h1{
-  font-size: 3rem;
-}
-
 #projects ul{
   list-style: none;
   margin-top: 1rem;
@@ -526,6 +483,12 @@ header a:hover{
   padding: 1rem;
   max-width: 30rem;
   border-radius: 0.625rem;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+#projects li:hover{
+  transform: scale(1.025);
 }
 
 .text{
@@ -563,6 +526,202 @@ header a:hover{
 
 
 
+/* WORK EXPERIENCE */
+#workexperience{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+.workWhite h4{
+  color: rgb(68, 68, 68);
+}
+
+.workWhite li{
+  background: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+}
+
+.workBlack p{
+  color: rgb(161, 161, 161);
+}
+
+.workBlack h4{
+  color: rgb(189, 189, 189);
+}
+
+.workBlack li{
+  background: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
+}
+
+#workexperience h2{
+  padding-bottom: 0.3rem;
+  font-size: 1.2rem;
+}
+
+#workexperience h3{
+  padding-bottom: 0.3rem;
+  font-size: 1.1rem;
+  color: slateblue;
+}
+
+#workexperience h4{
+  padding-bottom: 0.3rem;
+}
+
+#workexperience ul{
+  list-style: none;
+  margin-top: 1rem;
+  text-align: start;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+#workexperience li{
+  height: fit-content;
+  padding: 1rem;
+  max-width: 30rem;
+  border-radius: 0.625rem;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+#workexperience li:hover{
+  transform: scale(1.025);
+}
+
+
+/* SKILLS */
+/* #skills {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+#skills > p {
+    margin-bottom: 2rem;
+}
+
+.skills-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin: 0 auto;
+  max-width: 60rem;
+  padding: 0 1rem;
+}
+
+.skill-category {
+  width: 18rem;
+  height: 9rem;
+  padding: 1.5rem;
+  border-radius: 0.625rem;
+  transition: 0.3s;
+}
+
+.skill-category:hover {
+  transform: scale(1.025);
+}
+
+.skillsBlack .skill-category {
+  background-color: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 1rem rgba(255, 255, 255, 0.15);
+}
+
+.skillsWhite .skill-category {
+  background-color: #fff;
+  box-shadow: 0 0.2rem 1rem rgba(0,0,0,0.15);
+}
+
+#skills h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: slateblue;
+  text-align: center;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+}
+
+.skills-list p {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 6.25rem;
+  margin-bottom: 0; 
+}
+
+.skillsWhite .skills-list p {
+  color: rgb(19, 19, 19);
+  background-color: #e2d9e8;
+}
+
+.skillsBlack .skills-list p {
+  color: rgb(236, 236, 236);
+  background-color: #443f47;
+}
+
+.skill-category {
+  padding: 1rem;
+}
+#skills h2 {
+  font-size: 1.2rem;
+}
+.skills-list p {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+} */
+
+
+
+/* EDUCATION */
+/* #education{
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  text-align: center;
+}
+
+#education ul{
+  padding-top: 1rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#education li{
+  max-width: fit-content;
+  border-radius: 0.625rem;
+  padding: 1rem;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+#education li:hover{
+  transform: scale(1.025);
+}
+
+.bodyWhite #education li{
+  background: #fff;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,0.15);
+}
+
+.bodyBlack #education li{
+  background: rgb(15, 15, 15);
+  box-shadow: 0 0.2rem 0.5rem rgba(255, 255, 255, 0.15);
+} */
+
+
+
 /* CONTATO */
 #contact {
   padding-top: 10rem;
@@ -572,19 +731,9 @@ header a:hover{
   align-items: center;
 }
 
-.contactWhite{
-  border-top: 0.1rem solid #000;
-  background-color: rgb(235, 235, 235);
-}
-
 .contactWhite .contactDiv{
   background: #fff;
   box-shadow: 0 0rem 0.5rem rgba(0,0,0,0.15);
-}
-
-.contactBlack{
-  border-top: 0.1rem solid white;
-  background-color: rgb(20, 20, 20);
 }
 
 .contactBlack img{
@@ -603,6 +752,12 @@ header a:hover{
 #contact div{
   width: 50rem;
   padding: 1rem;
+  transition: 0.3s;
+  will-change: transform;
+}
+
+#contact>div:hover{
+  transform: scale(1.025);
 }
 
 #contact a{
@@ -632,7 +787,6 @@ header a:hover{
 
 #contact h1{
   text-align: center;
-  font-size: 3rem;
   padding-bottom: 1rem;
 }
 
@@ -660,7 +814,7 @@ footer {
   justify-content: space-around;
   padding-left: 7vw;
   padding-right: 7vw;
-  height: 8rem;
+  height: 6rem;
   font-size: 0.9rem;
   color: #6c757d;
 }
@@ -763,25 +917,23 @@ footer {
 /* RESPONSIVITY */
 @media (max-width: 1023px) {
   /* HEADER */
-  .header > h1{
-    font-size: 2rem;
-  }
   .nav h2{
     font-size: 0.8rem;
   }
 
 
   /* PRESENTATION */
-  #presentation{
-    justify-content: center;
+  #presentation h1{
+    font-size: 3rem;
   }
-  #presentation div{
-    width: 90%;
-    margin-right: 0;
-    margin-left: 0;
+  #presentation h2 {
+    font-size: 1.1rem;
   }
-
+  #presentation p{
+    font-size: 1rem;
+  }
   
+
   /* PROJECTS */
   #projects li{
     max-width: 45vw;
@@ -810,6 +962,10 @@ footer {
 }
 
 @media(max-width: 767px){
+  h1{
+    font-size: 2rem;
+  }
+
   /* HEADER */
   header {
     justify-content: flex-end;
@@ -823,21 +979,42 @@ footer {
 
 
   /* PRESENTATION */
+  #presentation{
+    flex-direction: column-reverse;
+  }
+  #presentation{
+    margin: 0 5%;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+  }
+  #presentation div{
+    margin-top: 0;
+    width: max-content;
+    height: max-content;
+    max-width: 90%;
+    text-align: center;
+  }
+  #presentation div.myImage{
+    margin-top: -30%;
+  }
+  .myImage img{
+    width: 35vw;
+    height: 35vw;
+  }
   #presentation h1{
     font-size: 2rem;
   }
   #presentation h2 {
+    font-size: 1rem;
     margin-bottom: 0.7rem;
   }
   #presentation p{
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 
 
   /* WORKEXPERIENCE */
-  #workexperience h1{
-    font-size: 2rem;
-  }
   #workexperience h2{
     font-size: 1rem;
   }
@@ -856,9 +1033,6 @@ footer {
 
 
   /* PROJECTS */
-  #projects h1{
-    font-size: 2rem;
-  }
   #projects .title{
     font-size: 1rem;
   }
@@ -880,9 +1054,6 @@ footer {
   /* CONTACT */
   #contact div{
     max-width: 90vw;
-  }
-  #contact h1{
-    font-size: 2rem;
   }
   #contact ul{
     padding: 0;
@@ -928,8 +1099,12 @@ footer {
   }
 }
 
+
 @media (max-width: 424px) {
   /* PRESENTATION */
+  #presentation div{
+    max-width: 100%;
+  }
   .buttonLink {
     padding: 0.4rem 0.4rem;
     margin-top: 0.5rem;
@@ -943,9 +1118,6 @@ footer {
 
   
   /* PROJECTS */
-  #projects h1{
-    font-size: 2rem;
-  }
   #projects .title{
     font-size: 1rem;
   }
