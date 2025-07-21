@@ -1091,6 +1091,21 @@ footer {
   }
 
 
+  /* SKILLS */
+  #skills ul{
+    gap: 0.5rem;
+  }
+
+  #skills p{
+    font-size: 0.8rem;
+  }
+
+  #skills li svg{
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+
   /* WORKEXPERIENCE */
   #workexperience h2{
     font-size: 1rem;
