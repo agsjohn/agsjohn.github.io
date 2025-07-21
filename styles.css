@@ -1133,13 +1133,13 @@ footer {
     max-width: 90vw;
   }
   #contact ul{
-    padding: 0;
+    padding: 1rem;
   }
   #contact ul p{
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
   #contact a {
-    font-size: 0.7rem;
+    font-size: 0.75rem;
   }
   #contact img {
     height: 1.5rem;
@@ -1220,9 +1220,6 @@ footer {
   #contact ul{
     display: flex;
     flex-direction: column;
-  }
-  #contact ul p{
-    font-size: 1rem;
   }
   #contact a {
     font-size: 0.8rem;
