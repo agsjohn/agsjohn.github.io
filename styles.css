@@ -1141,6 +1141,9 @@ footer {
     min-width: 20rem;
     margin: 0.5rem;
   }
+  #projects li img{
+    filter: brightness(100%) blur(0);
+  }
 
   
   /* CONTACT */
