@@ -428,8 +428,7 @@ header a{
 
 /* SKILLS */
 #skills {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding: 10rem 1rem;
   text-align: center;
 }
 
