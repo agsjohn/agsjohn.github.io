@@ -1146,6 +1146,30 @@ footer {
   }
 
   
+  /* EDUCATION */
+  .education-container {
+    gap: 1rem;
+  }
+  .education-item {
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+  .education-icon img {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  .education-content h2 {
+    font-size: 1.05rem;
+  }
+  .education-content h3 {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+  }
+  .education-details {
+    font-size: 0.7rem;
+  }
+
+  
   /* CONTACT */
   #contact div{
     max-width: 90vw;
