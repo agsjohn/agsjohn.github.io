@@ -14,11 +14,6 @@
   <header id="mainHeader">
     <ul class="sidebar">
       <div>
-        <li class="sidebar-close" onclick=hideSidebar()>
-          <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M5.29289 5.29289C5.68342 4.90237 6.31658 4.90237 6.70711 5.29289L12 10.5858L17.2929 5.29289C17.6834 4.90237 18.3166 4.90237 18.7071 5.29289C19.0976 5.68342 19.0976 6.31658 18.7071 6.70711L13.4142 12L18.7071 17.2929C19.0976 17.6834 19.0976 18.3166 18.7071 18.7071C18.3166 19.0976 17.6834 19.0976 17.2929 18.7071L12 13.4142L6.70711 18.7071C6.31658 19.0976 5.68342 19.0976 5.29289 18.7071C4.90237 18.3166 4.90237 17.6834 5.29289 17.2929L10.5858 12L5.29289 6.70711C4.90237 6.31658 4.90237 5.68342 5.29289 5.29289Z" fill="white"></path> 
-          </svg>
-        </li>
         <li class="sidebar-login" onclick=hideSidebar()>
           <button id="themeToggle1"class="themeToggle" onclick="trocarCor()"></button>
         </li>
@@ -30,29 +25,32 @@
       <li onclick=hideSidebar()><a href="#education" class="hideOnMobile"><h2>Formação</h2></a></li>
       <li onclick=hideSidebar()><a href="#contact" class="hideOnMobile"><h2>Contato</h2></a></li>
     </ul>
-    <li class="menu-button" onclick=showSidebar()>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 96 960 960">
-            <path d="M120 816v-60h720v60H120Zm0-210v-60h720v60H120Zm0-210v-60h720v60H120Z"/>
-        </svg>
-    </li>
-
+    
+    <div class="menu-button-wrapper">
+      <div class="menu-toggle-button" onclick="toggleMenu()">
+        <div class="menu-bar bar-1"></div>
+        <div class="menu-bar bar-2"></div>
+        <div class="menu-bar bar-3"></div>
+      </div>
+    </div>
+    
     <div class="header-spacer hideOnMobile"></div>
 
     <div class="nav hideOnMobile">
-        <a href="#presentation"><h2>Início</h2></a>
-        <a href="#skills"><h2>Habilidades</h2></a>
-        <a href="#workexperience"><h2>Experiência</h2></a>
-        <a href="#projects"><h2>Projetos</h2></a>
-        <a href="#education"><h2>Formação</h2></a>
-        <a href="#contact"><h2>Contato</h2></a>
+      <a href="#presentation"><h2>Início</h2></a>
+      <a href="#skills"><h2>Habilidades</h2></a>
+      <a href="#workexperience"><h2>Experiência</h2></a>
+      <a href="#projects"><h2>Projetos</h2></a>
+      <a href="#education"><h2>Formação</h2></a>
+      <a href="#contact"><h2>Contato</h2></a>
     </div>
 
     <div class="header-right-content hideOnMobile">
-        <div class="divTheme">
-          <button id="themeToggle2" class="themeToggle" onclick="trocarCor()"></button>
-        </div>
+      <div class="divTheme">
+        <button id="themeToggle2" class="themeToggle" onclick="trocarCor()"></button>
+      </div>
     </div>
-</header>
+  </header>
 
   <section id="presentation">
     <div>
@@ -153,9 +151,9 @@
         <h3>HW Center Produtos Hospitalares</h3>
         <h4>07/2024 - 12/2024</h4>
         <p>&bull; Prestação de suporte técnico (presencial e remoto) a usuários, resolvendo problemas de rede, software e hardware. <br>
-            &bull; Realização de manutenção preventiva e corretiva em equipamentos de informática, assegurando o funcionamento e a disponibilidade de sistemas. <br>
-            &bull; Criação de relatórios técnicos de manutenção utilizando Pacote Office (Word e Excel). <br>
-            &bull; Desenvolvimento de habilidades essenciais como trabalho em equipe, solução de problemas e comunicação em ambiente de TI. 
+          &bull; Realização de manutenção preventiva e corretiva em equipamentos de informática, assegurando o funcionamento e a disponibilidade de sistemas. <br>
+          &bull; Criação de relatórios técnicos de manutenção utilizando Pacote Office (Word e Excel). <br>
+          &bull; Desenvolvimento de habilidades essenciais como trabalho em equipe, solução de problemas e comunicação em ambiente de TI. 
         </p>
       </li>
     </ul>
