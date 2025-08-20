@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButtons = document.querySelectorAll('.themeToggle');
     const body = document.body;
+    const sidebar = document.querySelector('.sidebar');
 
     function toggleAllThemeClasses() {
         body.classList.toggle('bodyBlack');
@@ -29,7 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('theme', body.className);
     }
 
-    // --- LÓGICA DE CARREGAMENTO DO TEMA (MELHORADA) ---
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme && savedTheme !== body.className) {
         toggleAllThemeClasses();
@@ -38,33 +38,34 @@ document.addEventListener('DOMContentLoaded', () => {
     themeToggleButtons.forEach(button => {
         button.addEventListener('click', applyThemeToggle);
     });
-});
 
+    window.toggleMenu = function() {
+        const isMenuOpen = body.classList.toggle('menu-open');
+        const sidebar = document.querySelector('.sidebar');
+        if (isMenuOpen) {
+            sidebar.style.visibility = 'visible';
+        } else {
+            setTimeout(() => {
+                sidebar.style.visibility = 'hidden';
+            }, 400);
+        }
+    };
 
-function showSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const menubutton = document.querySelector('.menu-button svg');
-    sidebar.style.display = 'flex';
-    menubutton.style.display = "none";
-}
+    document.querySelectorAll('.sidebar li').forEach(item => {
+        item.addEventListener('click', () => {
+            if (body.classList.contains('menu-open')) {
+                toggleMenu();
+            }
+        });
+    });
 
-function hideSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    const menubutton = document.querySelector('.menu-button svg');
-    sidebar.style.display = 'none';
-    menubutton.style.display = "flex";
-}
-
-window.addEventListener('resize', function() {
-    if (window.innerWidth > 767) {
-        hideSidebar();
-    }
-});
-
-document.addEventListener('mousemove', (e) => {
-    const glow = document.getElementById('cursor-glow');
-    window.requestAnimationFrame(() => {
-        glow.style.left = `${e.clientX}px`;
-        glow.style.top = `${e.clientY}px`;
+    window.addEventListener('resize', function() {
+        const sidebar = document.querySelector('.sidebar');
+        if (window.innerWidth > 767) {
+            if (body.classList.contains('menu-open')) {
+                body.classList.remove('menu-open');
+                sidebar.style.visibility = 'hidden';
+            }
+        }
     });
 });
