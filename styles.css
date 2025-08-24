@@ -3,10 +3,6 @@
   width: 0.5rem;
 }
 
-::-webkit-scrollbar-track {
-  background: #0f172a;
-}
-
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #8208b2, #4f46e5);
   border-radius: 0.4rem;
@@ -61,6 +57,9 @@ h1{
 }
 
 /* Tema Escuro */
+.bodyBlack::-webkit-scrollbar-track {
+  background: #0f172a;
+}
 .bodyBlack section{
   border-top: solid 0.1rem white;
 }
@@ -77,6 +76,9 @@ h1{
 }
 
 /* Tema Claro */
+.bodyWhite::-webkit-scrollbar-track {
+  background: #cdd8f1;
+}
 .bodyWhite section{
   border-top: solid 0.1rem black;
 }
@@ -588,7 +590,7 @@ header a{
 }
 
 #workexperience li:hover{
-  transform: translateY(-0.5rem) scale(1.008);
+  transform: translateY(-0.5rem);
 }
 
 .bodyBlack #workexperience li:hover,
@@ -822,7 +824,7 @@ header a{
 }
 
 #contactDiv:hover {
-  transform: translateY(-0.25rem) scale(1.0153);
+  transform: translateY(-0.25rem);
 }
 
 .bodyBlack #contact #contactDiv:hover,
