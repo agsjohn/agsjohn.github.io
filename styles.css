@@ -404,7 +404,7 @@ header a{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 60rem;
+  height: 59rem;
   gap: 2rem;
 }
 
@@ -495,7 +495,8 @@ header a{
 
 /* SKILLS */
 #skills {
-  padding: 10rem 1rem;
+  scroll-margin: 3rem;
+  padding: 5rem 1rem;
   text-align: center;
 }
 
@@ -566,7 +567,8 @@ header a{
 
 /* WORK EXPERIENCE */
 #workexperience{
-  padding-top: 10rem;
+  scroll-margin: 3rem;
+  padding-top: 4rem;
   padding-bottom: 10rem;
   text-align: center;
 }
@@ -639,7 +641,8 @@ header a{
 
 /* PROJECTS */
 #projects {
-  padding-top: 10rem;
+  scroll-margin: 3rem;
+  padding-top: 4rem;
   padding-bottom: 10rem;
   text-align: center;
 }
@@ -743,7 +746,8 @@ header a{
 
 /* EDUCATION */
 #education {
-  padding: 8rem 2rem;
+  scroll-margin: 3rem;
+  padding: 4rem 2rem 8rem 2rem;
   text-align: center;
 }
 
@@ -825,8 +829,8 @@ header a{
 
 /* CONTATO */
 #contact {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.querySelectorAll('.slide-menu button').forEach(item => {
         item.addEventListener('click', () => {
-            // toggleMenu();
+            toggleMenu();
         });
     });
 
