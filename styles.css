@@ -105,7 +105,6 @@ header {
   height: 3.5rem;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
   z-index: 10;
   border-bottom: 1px solid rgb(158, 158, 158);
 }
@@ -121,7 +120,8 @@ header svg{
   display: flex;
   justify-content: center; 
   align-items: center;
-  gap: 2rem; 
+  width: 100%;
+  gap: 2rem;
   height: 100%;
 }
 
@@ -174,63 +174,13 @@ header svg{
   justify-content: flex-end;
 }
 
-.menu-button-wrapper {
-  display: none;
-  position: relative;
-  z-index: 11;
-  cursor: pointer;
-  width: 2rem;
-  height: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.menu-toggle-button {
-  width: 1.5rem;
-  height: 1rem;
-  position: relative;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu-bar {
-  width: 100%;
-  height: 2px;
-  background-color: white;
-  border-radius: 2px;
-  transition: all 0.125s ease-in;
-}
-
-.menu-open .sidebar {
-  transform: translateX(0);
-}
-
-.menu-open .menu-bar.bar-1 {
-  transform: rotate(-45deg) translate(-5px, 5px);
-}
-
-.menu-open .menu-bar.bar-2 {
-  opacity: 0;
-}
-
-.menu-open .menu-bar.bar-3 {
-  transform: rotate(45deg) translate(-5px, -5px);
-}
-
-.bodyWhite .menu-bar {
-  background-color: black;
-}
-
 header a{
   font-weight: bold;
   text-decoration: none;
 }
 
-.bodyBlack #mainHeader a:hover,
-.bodyWhite #mainHeader a:hover{
+.bodyBlack #mainHeader .nav a:hover,
+.bodyWhite #mainHeader .nav a:hover{
   color: slateblue;
 }
 
@@ -238,6 +188,11 @@ header a{
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.themeToggleNav{
+  position: fixed;
+  right: 1rem;
 }
 
 .themeToggle {
@@ -297,87 +252,148 @@ header a{
 
 
 /* SIDEBAR */
-.sidebar {
+#menu-toggle{
+  display: none;
+}
+
+.menu-btn{
+  display: none;
   position: fixed;
-  top: 0; 
-  right: 0;
-  height: 100%;
-  width: 250px;
-  background-color: rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(12px);
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.2);
-  list-style: none;
-  transform: translateX(100%);
-  transition: transform 0.2s ease-in;
-  display: flex;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 25px;
+  height: 18px;
+  cursor: pointer;
+  z-index: 1002;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: space-between;
 }
 
-.sidebar > div {
-  display: flex;
-  justify-content: start;
-  flex-direction: row;
-  align-items: center;
+.menu-btn span{
+  display: block;
+  height: 2.1px;
   width: 100%;
-}
-
-.sidebar li{
-  min-height: 3rem;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  width: 100%;
+  border-radius: 0.2rem;
   transition: 0.3s;
 }
 
-.sidebar li:hover{
+.slide-menu{
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 250px;
+  height: 100%;
+  backdrop-filter: blur(12px);
+  color: white;
+  transition: right 0.3s ease;
+  padding-top: 3.45rem;
+  z-index: 1001;
+}
+
+.slide-menu li{
+  list-style: none;
+}
+
+.slide-menu li a{
+  display: block;
+  width: 100%;
+  height: fit-content;
+}
+
+.slide-menu li a h2{
+  padding: .5rem 1rem;
+  width: fit-content;
+  height: fit-content;
+  transition: 0.2s ease;
+}
+
+.slide-menu li a:hover h2{
   transform: scale(1.1);
 }
 
-.sidebar .sidebar-close{
-  padding: 1rem;
-  height: 3.5rem;
-  width: fit-content;
-  margin: 0;
+.slide-menu button{
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
 }
 
-.sidebar .sidebar-close img{
-  height: 100%;
-  filter: invert();
-}
-
-.sidebar .sidebar-login{
-  padding: 1rem;
-  height: 3.5rem;
-  width: fit-content;
-  margin: 0;
-}
-
-.sidebar .sidebar-login img{
-  height: 100%;
-  filter: invert();
-}
-
-.sidebar a{
-  height: 100%;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  color: black;
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
+  height: 100%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+#menu-toggle:checked ~ .slide-menu{
+  right: 0;
+}
+
+#menu-toggle:checked ~ .overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#menu-toggle:checked + .menu-btn span:nth-child(1){
+  transform: rotate(-45deg) translateY(11px);
+}
+
+#menu-toggle:checked + .menu-btn span:nth-child(2){
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-btn span:nth-child(3){
+  transform: rotate(45deg) translateY(-11px);
 }
 
 /* Tema Escuro */
-.bodyBlack header .sidebar h2{
-  color: white;
+.bodyBlack .menu-btn span{
+  background: white;
+}
+.bodyBlack .slide-menu{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.bodyBlack #menu-toggle:checked + .menu-btn span:nth-child(1){
+  background-color: white;
+}
+.bodyBlack #menu-toggle:checked + .menu-btn span:nth-child(3){
+  background-color: white;
+}
+.bodyBlack .slide-menu li{
+  border-bottom: 1px solid white;
+}
+.bodyBlack .slide-menu li:first-child{
+  border-top: 1px solid white;
+}
+.bodyBlack .overlay{
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* Tema Claro */
-.bodyWhite header .sidebar h2{
-  color: black;
+.bodyWhite .menu-btn span{
+  background: black;
+}
+.bodyWhite .slide-menu{
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.bodyWhite #menu-toggle:checked + .menu-btn span:nth-child(1){
+  background-color: black;
+}
+.bodyWhite #menu-toggle:checked + .menu-btn span:nth-child(3){
+  background-color: black;
+}
+.bodyWhite .slide-menu li{
+  border-bottom: 1px solid black;
+}
+.bodyWhite .slide-menu li:first-child{
+  border-top: 1px solid black;
+}
+.bodyWhite .overlay{
+  background-color: rgba(255, 255, 255, 0.4);
 }
 
 
@@ -388,7 +404,7 @@ header a{
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 60rem;
+  height: 59rem;
   gap: 2rem;
 }
 
@@ -479,7 +495,8 @@ header a{
 
 /* SKILLS */
 #skills {
-  padding: 10rem 1rem;
+  scroll-margin: 3rem;
+  padding: 5rem 1rem;
   text-align: center;
 }
 
@@ -550,7 +567,8 @@ header a{
 
 /* WORK EXPERIENCE */
 #workexperience{
-  padding-top: 10rem;
+  scroll-margin: 3rem;
+  padding-top: 4rem;
   padding-bottom: 10rem;
   text-align: center;
 }
@@ -623,7 +641,8 @@ header a{
 
 /* PROJECTS */
 #projects {
-  padding-top: 10rem;
+  scroll-margin: 3rem;
+  padding-top: 4rem;
   padding-bottom: 10rem;
   text-align: center;
 }
@@ -727,7 +746,8 @@ header a{
 
 /* EDUCATION */
 #education {
-  padding: 8rem 2rem;
+  scroll-margin: 3rem;
+  padding: 4rem 2rem 8rem 2rem;
   text-align: center;
 }
 
@@ -809,8 +829,8 @@ header a{
 
 /* CONTATO */
 #contact {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 5rem;
+  padding-bottom: 8rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1097,7 +1117,7 @@ footer {
   .hideOnMobile{
     display: none;
   }
-  .menu-button-wrapper {
+  .menu-btn {
     display: flex;
   }
 

@@ -10,31 +10,27 @@
 <body class="bodyBlack">
   <div class="bg-grid"></div>
   <div id="cursor-glow"></div>
-
+  
   <header id="mainHeader">
-    <ul class="sidebar">
-      <div>
-        <li class="sidebar-login" onclick=hideSidebar()>
-          <button id="themeToggle1"class="themeToggle" onclick="trocarCor()"></button>
-        </li>
-      </div>
-      <li onclick=hideSidebar()><a href="#presentation" class="hideOnMobile"><h2>Início</h2></a></li>
-      <li onclick=hideSidebar()><a href="#skills" class="hideOnMobile"><h2>Habilidades</h2></a></li>
-      <li onclick=hideSidebar()><a href="#workexperience" class="hideOnMobile"><h2>Experiência</h2></a></li>
-      <li onclick=hideSidebar()><a href="#projects" class="hideOnMobile"><h2>Projetos</h2></a></li>
-      <li onclick=hideSidebar()><a href="#education" class="hideOnMobile"><h2>Formação</h2></a></li>
-      <li onclick=hideSidebar()><a href="#contact" class="hideOnMobile"><h2>Contato</h2></a></li>
-    </ul>
-    
-    <div class="menu-button-wrapper">
-      <div class="menu-toggle-button" onclick="toggleMenu()">
-        <div class="menu-bar bar-1"></div>
-        <div class="menu-bar bar-2"></div>
-        <div class="menu-bar bar-3"></div>
-      </div>
+    <input type="checkbox" id="menu-toggle">
+
+    <label for="menu-toggle" class="menu-btn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <div class="slide-menu">
+      <button class="themeToggle" onclick="trocarCor()"></button>
+      <ul>
+        <li><a href="#presentation"><h2>Início</h2></a></li>
+        <li><a href="#skills"><h2>Habilidades</h2></a></li>
+        <li><a href="#workexperience"><h2>Experiência</h2></a></li>
+        <li><a href="#projects"><h2>Projetos</h2></a></li>
+        <li><a href="#education"><h2>Formação</h2></a></li>
+        <li><a href="#contact"><h2>Contato</h2></a></li>
+      </ul>
     </div>
-    
-    <div class="header-spacer hideOnMobile"></div>
 
     <div class="nav hideOnMobile">
       <a href="#presentation"><h2>Início</h2></a>
@@ -44,12 +40,10 @@
       <a href="#education"><h2>Formação</h2></a>
       <a href="#contact"><h2>Contato</h2></a>
     </div>
+  
+    <button class="themeToggle themeToggleNav hideOnMobile" onclick="trocarCor()"></button>
 
-    <div class="header-right-content hideOnMobile">
-      <div class="divTheme">
-        <button id="themeToggle2" class="themeToggle" onclick="trocarCor()"></button>
-      </div>
-    </div>
+    <div class="overlay"></div>
   </header>
 
   <section id="presentation">
