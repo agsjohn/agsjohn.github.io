@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const themeToggleButtons = document.querySelectorAll('.themeToggle');
     const body = document.body;
-    const sidebar = document.querySelector('.sidebar');
 
     function toggleAllThemeClasses() {
         body.classList.toggle('bodyBlack');
@@ -40,31 +39,31 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.toggleMenu = function() {
-        const isMenuOpen = body.classList.toggle('menu-open');
-        const sidebar = document.querySelector('.sidebar');
-        if (isMenuOpen) {
-            sidebar.style.visibility = 'visible';
+        const sidebar = document.getElementById('menu-toggle');
+        if (sidebar.checked) {
+            sidebar.checked = false;
         } else {
-            setTimeout(() => {
-                sidebar.style.visibility = 'hidden';
-            }, 400);
+            sidebar.checked = true;
         }
     };
 
-    document.querySelectorAll('.sidebar li').forEach(item => {
+    document.querySelectorAll('.slide-menu button').forEach(item => {
         item.addEventListener('click', () => {
-            if (body.classList.contains('menu-open')) {
-                toggleMenu();
-            }
+            // toggleMenu();
+        });
+    });
+
+    document.querySelectorAll('.slide-menu li').forEach(item => {
+        item.addEventListener('click', () => {
+            toggleMenu();
         });
     });
 
     window.addEventListener('resize', function() {
-        const sidebar = document.querySelector('.sidebar');
+        const sidebar = document.querySelector('.slide-menu');
         if (window.innerWidth > 767) {
-            if (body.classList.contains('menu-open')) {
-                body.classList.remove('menu-open');
-                sidebar.style.visibility = 'hidden';
+            if (sidebar.checked) {
+                sidebar.checked = false;
             }
         }
     });
