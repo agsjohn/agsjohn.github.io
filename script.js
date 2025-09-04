@@ -59,6 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    document.querySelectorAll('.overlay').forEach(item => {
+        item.addEventListener('click', () => {
+            toggleMenu();
+        });
+    });
+
     window.addEventListener('resize', function() {
         const sidebar = document.querySelector('.slide-menu');
         if (window.innerWidth > 767) {
