@@ -81,4 +81,16 @@ document.addEventListener('DOMContentLoaded', () => {
             glow.style.top = `${e.clientY}px`;
         });
     });
+
+    window.addEventListener('scroll', function() {
+        const topButton = document.querySelector('.topButton');
+        const presentationSection = document.querySelector('#presentation');
+        const presentationHeight = presentationSection.offsetHeight;
+        
+        if (window.scrollY > presentationHeight) {
+            topButton.classList.add('show');
+        } else {
+            topButton.classList.remove('show');
+        }
+    });
 });
