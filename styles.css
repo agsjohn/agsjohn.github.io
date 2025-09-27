@@ -847,27 +847,35 @@ header a{
 
 /* TOP BUTTON */
 .topButton{
-  margin-top: -2.4rem;
-  margin-bottom: -0.5rem;
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  bottom: 3%;
+  right: 2%;
   z-index: 10;
-  height: fit-content;
-  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+  will-change: transform;
+}
+
+.topButton.show{
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .topButton svg{
   background-color: var(--main-color);
   border: 0.15rem solid var(--oposite-color);
   border-radius: 50%;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 2.7rem;
+  height: 2.7rem;
   transition: 0.3s;
 }
 
 .topButton svg:hover{
   cursor: pointer;
-  transform: scale(1.05);
+  transform: scale(1.1);
   box-shadow: 0 0 1rem .1rem var(--secondary-color);
 }
 
@@ -877,7 +885,7 @@ header a{
   border: 0.15rem solid var(--main-color);
   filter: invert();
 }
-.bodyWhite .topButton svg:hover{
+.bodyWhite .topButton svg:hover {
   box-shadow: 0 0 1rem var(--invert-secondary-color);
 }
 
