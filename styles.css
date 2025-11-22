@@ -450,7 +450,7 @@ header a{
 /* SKILLS */
 #skills {
   scroll-margin: 3rem;
-  padding: 5rem 1rem;
+  padding: 5rem 15rem;
   text-align: center;
 }
 
@@ -848,7 +848,7 @@ header a{
 /* TOP BUTTON */
 .topButton{
   position: fixed;
-  bottom: 3%;
+  bottom: 2%;
   right: 2%;
   z-index: 10;
   opacity: 0;
@@ -998,6 +998,10 @@ footer {
   }
   #presentation p{
     font-size: 1rem;
+  }
+
+  #skills {
+    padding: 5rem 1rem;
   }
   
 
