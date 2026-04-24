@@ -570,7 +570,7 @@ header a{
 
 #workexperience .timeline-item:nth-child(odd) {
   left: 0;
-  text-align: right;
+  text-align: left;
 }
 
 #workexperience .timeline-item:nth-child(even) {
