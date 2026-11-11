@@ -65,6 +65,15 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
+        // Atualiza o arquivo de download do currículo de acordo com o idioma
+        const resumeFile = lang === 'en' ? 'files/JoaoVitorM_Resume.pdf' : 'files/JoaoVitorM_Curriculo.pdf';
+        const resumeDownloadName = lang === 'en' ? 'JoaoVitorM_Resume.pdf' : 'JoaoVitorM_Curriculo.pdf';
+        const resumeLinks = document.querySelectorAll('a[data-i18n="presentation.resume"]');
+        resumeLinks.forEach(link => {
+            link.setAttribute('href', resumeFile);
+            link.setAttribute('download', resumeDownloadName);
+        });
+
         // O botão exibe o próximo idioma para o qual o usuário pode alternar
         const nextLang = lang === 'pt' ? 'EN' : 'PT';
         const ariaLabel = lang === 'pt' ? 'Mudar idioma para inglês' : 'Mudar idioma para português';
