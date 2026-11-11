@@ -218,6 +218,20 @@ header a{
   justify-content: center;
 }
 
+.header-actions {
+  position: fixed;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1002;
+}
+
+.header-actions .themeToggleNav {
+  position: static;
+  right: auto;
+}
+
 .themeToggleNav{
   position: fixed;
   right: 1rem;
@@ -238,6 +252,32 @@ header a{
   transform: scale(1.1);
 }
 
+.langToggle {
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--oposite-color);
+  border: 0.12rem var(--oposite-color) solid;
+  transition: 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.langToggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem var(--secondary-color);
+}
+
 /* Tema Escuro */
 .bodyBlack .themeToggle {
   background-image: url("files/sun.png");
@@ -249,6 +289,14 @@ header a{
   box-shadow: 0 0 1rem var(--invert-secondary-color);
 }
 
+.bodyBlack .langToggle {
+  color: var(--oposite-color);
+  border: 0.12rem var(--oposite-color) solid;
+}
+.bodyBlack .langToggle:hover {
+  box-shadow: 0 0 1rem var(--secondary-color);
+}
+
 /* Tema Claro */
 .bodyWhite .themeToggle {
   background-image: url("files/moon.png");
@@ -257,6 +305,15 @@ header a{
 .bodyWhite .themeToggle:hover {
   box-shadow: 0 0 1rem var(--secondary-color);
 }
+
+.bodyWhite .langToggle {
+  color: var(--oposite-color);
+  border: 0.12rem var(--oposite-color) solid;
+}
+.bodyWhite .langToggle:hover {
+  box-shadow: 0 0 1rem var(--secondary-color);
+}
+
 .bodyWhite #mainHeader svg{
   filter: invert();
 }
@@ -328,6 +385,20 @@ header a{
 
 .slide-menu li a:hover h2{
   transform: scale(1.1);
+}
+
+.slide-menu-buttons {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  z-index: 1002;
+}
+
+.slide-menu-buttons button {
+  position: static;
 }
 
 .slide-menu button{

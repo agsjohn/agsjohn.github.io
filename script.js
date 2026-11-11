@@ -38,6 +38,58 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', applyThemeToggle);
     });
 
+    // --- Internacionalização (i18n) ---
+    const langToggleButtons = document.querySelectorAll('.langToggle');
+
+    function applyLanguage(lang) {
+        if (typeof translations === 'undefined' || !translations[lang]) return;
+
+        const langData = translations[lang];
+
+        document.documentElement.lang = lang === 'en' ? 'en' : 'pt-BR';
+        if (langData.title) {
+            document.title = langData.title;
+        }
+
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            const translation = langData[key];
+
+            if (translation !== undefined) {
+                if (typeof translation === 'string' && (translation.includes('<') || translation.includes('&bull;') || translation.includes('&copy;'))) {
+                    element.innerHTML = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+
+        // O botão exibe o próximo idioma para o qual o usuário pode alternar
+        const nextLang = lang === 'pt' ? 'EN' : 'PT';
+        const ariaLabel = lang === 'pt' ? 'Mudar idioma para inglês' : 'Mudar idioma para português';
+        langToggleButtons.forEach(button => {
+            button.textContent = nextLang;
+            button.setAttribute('aria-label', ariaLabel);
+            button.setAttribute('title', ariaLabel);
+        });
+
+        localStorage.setItem('language', lang);
+    }
+
+    function toggleLanguage() {
+        const currentLang = localStorage.getItem('language') || 'pt';
+        const newLang = currentLang === 'pt' ? 'en' : 'pt';
+        applyLanguage(newLang);
+    }
+
+    const savedLanguage = localStorage.getItem('language') || 'pt';
+    applyLanguage(savedLanguage);
+
+    langToggleButtons.forEach(button => {
+        button.addEventListener('click', toggleLanguage);
+    });
+
     window.toggleMenu = function() {
         const sidebar = document.getElementById('menu-toggle');
         if (sidebar.checked) {
@@ -47,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    document.querySelectorAll('.slide-menu button').forEach(item => {
+    document.querySelectorAll('.slide-menu button:not(.themeToggle):not(.langToggle)').forEach(item => {
         item.addEventListener('click', () => {
             toggleMenu();
         });

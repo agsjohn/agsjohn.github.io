@@ -22,39 +22,45 @@
     </label>
 
     <div class="slide-menu">
-      <button class="themeToggle"></button>
+      <div class="slide-menu-buttons">
+        <button class="langToggle" aria-label="Mudar idioma para inglês">EN</button>
+        <button class="themeToggle" aria-label="Mudar tema"></button>
+      </div>
       <ul>
-        <li><a href="#presentation"><h2>Início</h2></a></li>
-        <li><a href="#skills"><h2>Habilidades</h2></a></li>
-        <li><a href="#workexperience"><h2>Experiência</h2></a></li>
-        <li><a href="#projects"><h2>Projetos</h2></a></li>
-        <li><a href="#education"><h2>Formação</h2></a></li>
-        <li><a href="#contact"><h2>Contato</h2></a></li>
+        <li><a href="#presentation"><h2 data-i18n="nav.home">Início</h2></a></li>
+        <li><a href="#skills"><h2 data-i18n="nav.skills">Habilidades</h2></a></li>
+        <li><a href="#workexperience"><h2 data-i18n="nav.experience">Experiência</h2></a></li>
+        <li><a href="#projects"><h2 data-i18n="nav.projects">Projetos</h2></a></li>
+        <li><a href="#education"><h2 data-i18n="nav.education">Formação</h2></a></li>
+        <li><a href="#contact"><h2 data-i18n="nav.contact">Contato</h2></a></li>
       </ul>
     </div>
 
     <div class="nav hideOnMobile">
-      <a href="#presentation"><h2>Início</h2></a>
-      <a href="#skills"><h2>Habilidades</h2></a>
-      <a href="#workexperience"><h2>Experiência</h2></a>
-      <a href="#projects"><h2>Projetos</h2></a>
-      <a href="#education"><h2>Formação</h2></a>
-      <a href="#contact"><h2>Contato</h2></a>
+      <a href="#presentation"><h2 data-i18n="nav.home">Início</h2></a>
+      <a href="#skills"><h2 data-i18n="nav.skills">Habilidades</h2></a>
+      <a href="#workexperience"><h2 data-i18n="nav.experience">Experiência</h2></a>
+      <a href="#projects"><h2 data-i18n="nav.projects">Projetos</h2></a>
+      <a href="#education"><h2 data-i18n="nav.education">Formação</h2></a>
+      <a href="#contact"><h2 data-i18n="nav.contact">Contato</h2></a>
     </div>
   
-    <button class="themeToggle themeToggleNav hideOnMobile"></button>
+    <div class="header-actions hideOnMobile">
+      <button class="langToggle" aria-label="Mudar idioma para inglês">EN</button>
+      <button class="themeToggle themeToggleNav" aria-label="Mudar tema"></button>
+    </div>
 
     <div class="overlay"></div>
   </header>
 
   <section id="presentation">
     <div>
-      <p>Olá, me chamo </p>
-      <h1>João Vitor Martins</h1>
-      <h2>Backend Developer | Java & Ecosystem</h2>
-      <p class="presentationText">Desenvolvedor focado na construção de aplicações escaláveis com Java, Spring Boot e Arquitetura de Microsserviços. Apaixonado por transformar problemas complexos em código limpo e eficiente. </p>
-      <a href="#contact" class="buttonLink">Entre em contato</a>
-      <a href="files/JoaoVitorM_Curriculo.pdf" class="buttonLink" download>Baixar Currículo</a>
+      <p data-i18n="presentation.greeting">Olá, me chamo </p>
+      <h1 data-i18n="presentation.name">João Vitor Martins</h1>
+      <h2 data-i18n="presentation.role">Backend Developer | Java & Ecosystem</h2>
+      <p class="presentationText" data-i18n="presentation.text">Desenvolvedor focado na construção de aplicações escaláveis com Java, Spring Boot e Arquitetura de Microsserviços. Apaixonado por transformar problemas complexos em código limpo e eficiente, adoro um novo desafio. </p>
+      <a href="#contact" class="buttonLink" data-i18n="presentation.contact">Entre em contato</a>
+      <a href="files/JoaoVitorM_Curriculo.pdf" class="buttonLink" data-i18n="presentation.resume" download>Baixar Currículo</a>
     </div>
     <div class="myImage">
       <img src="files/myImage.png">
@@ -62,9 +68,9 @@
   </section>
 
   <section id="skills" class="background">
-    <h1>Habilidades Técnicas</h1>
-    <h2>Todas as ferramentas e tecnologias que tenho familiaridade. </h2>
-    <h3>Linguagens</h3>
+    <h1 data-i18n="skills.title">Habilidades Técnicas</h1>
+    <h2 data-i18n="skills.subtitle">Todas as ferramentas e tecnologias que tenho familiaridade. </h2>
+    <h3 data-i18n="skills.languages">Linguagens</h3>
     <ul>
       <li>
         <svg fill="#ffffff" viewBox="0 0 32.00 32.00" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M 17.625 3 C 19.027344 6.308594 12.597656 8.335938 12 11.09375 C 11.453125 13.625 15.808594 16.59375 15.8125 16.59375 C 15.148438 15.546875 14.664063 14.664063 14 13.03125 C 12.875 10.273438 20.855469 7.785156 17.625 3 Z M 21.875 7.59375 C 21.875 7.59375 16.253906 7.949219 15.96875 11.625 C 15.839844 13.261719 17.453125 14.121094 17.5 15.3125 C 17.539063 16.285156 16.53125 17.09375 16.53125 17.09375 C 16.53125 17.09375 18.339844 16.765625 18.90625 15.28125 C 19.53125 13.632813 17.6875 12.507813 17.875 11.1875 C 18.054688 9.925781 21.875 7.59375 21.875 7.59375 Z M 23.25 16.0625 C 22.660156 16.035156 21.996094 16.253906 21.40625 16.6875 C 22.570313 16.429688 23.5625 17.160156 23.5625 18 C 23.5625 19.882813 20.875 21.65625 20.875 21.65625 C 20.875 21.65625 25.03125 21.191406 25.03125 18.09375 C 25.03125 16.816406 24.230469 16.109375 23.25 16.0625 Z M 12.21875 16.09375 C 10.769531 16.144531 7.875 16.382813 7.875 17.5 C 7.875 19.054688 14.617188 19.175781 19.4375 18.21875 C 19.4375 18.21875 20.75 17.304688 21.09375 16.96875 C 17.933594 17.625 10.71875 17.726563 10.71875 17.15625 C 10.71875 16.632813 13.03125 16.09375 13.03125 16.09375 C 13.03125 16.09375 12.703125 16.078125 12.21875 16.09375 Z M 11.78125 18.96875 C 10.988281 18.96875 9.8125 19.585938 9.8125 20.1875 C 9.8125 21.398438 15.78125 22.328125 20.1875 20.5625 L 18.65625 19.625 C 15.667969 20.601563 10.148438 20.277344 11.78125 18.96875 Z M 12.53125 21.6875 C 11.449219 21.6875 10.75 22.371094 10.75 22.875 C 10.75 24.425781 17.214844 24.578125 19.78125 23 L 18.15625 21.9375 C 16.242188 22.761719 11.425781 22.882813 12.53125 21.6875 Z M 8.90625 23.09375 C 7.140625 23.058594 6 23.859375 6 24.53125 C 6 28.105469 24.09375 27.933594 24.09375 24.28125 C 24.09375 23.675781 23.378906 23.386719 23.125 23.25 C 24.601563 26.742188 8.34375 26.46875 8.34375 24.40625 C 8.34375 23.9375 9.546875 23.46875 10.65625 23.6875 L 9.71875 23.15625 C 9.441406 23.113281 9.160156 23.097656 8.90625 23.09375 Z M 26 25.5 C 23.25 28.160156 16.289063 29.113281 9.28125 27.46875 C 16.289063 30.398438 25.964844 28.769531 26 25.5 Z"></path></g></svg>
@@ -72,7 +78,7 @@
       </li>
       <li>
         <svg viewBox="0 0 76 76" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" enable-background="new 0 0 76.00 76.00" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#ffffff" fill-opacity="1" stroke-width="4.484" stroke-linejoin="round" d="M 50.9358,52.5851C 48.5894,53.7269 45.5246,54.2978 41.7413,54.2978C 36.8017,54.2978 32.9193,52.8391 30.0939,49.9218C 27.2685,47.0045 25.8558,43.1197 25.8558,38.2672C 25.8558,33.0954 27.4451,28.9009 30.6236,25.6836C 33.8022,22.4664 37.9266,20.8578 42.9967,20.8578C 46.1366,20.8578 48.7829,21.2642 50.9358,22.0769L 50.9358,29.2174C 48.8168,27.9793 46.4027,27.36 43.6934,27.36C 40.7181,27.36 38.3172,28.2937 36.4909,30.1612C 34.6646,32.0286 33.7514,34.5589 33.7514,37.7519C 33.7514,40.8144 34.6125,43.2539 36.3349,45.0706C 38.0572,46.8872 40.377,47.7956 43.2943,47.7956C 46.0761,47.7956 48.6233,47.1763 50.9358,45.9378L 50.9358,52.5851 Z "></path> </g></svg>
-        <p>Linguagem C</p>
+        <p data-i18n="skills.cLanguage">Linguagem C</p>
       </li>
       <li>
         <svg fill="#ffffff" viewBox="-10.88 -10.88 53.76 53.76" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M1.734 32l15.068-15.333 15.198 15.333zM0 0h16l-16 16.667zM17.865 0l-17.865 18.667v13.333l32-32z"></path> </g></svg>
@@ -99,7 +105,7 @@
         <p>JavaScript</p>
       </li>
     </ul>
-    <h3>Frameworks e Bibliotecas</h3>
+    <h3 data-i18n="skills.frameworks">Frameworks e Bibliotecas</h3>
     <ul>
       <li>
         <svg fill="#ffffff" viewBox="-3.2 -3.2 38.40 38.40" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M29.094 1.661c-0.448 1.078-1.021 2.094-1.708 3.031-3.010-3.005-7.089-4.693-11.344-4.693-8.802 0-16.042 7.24-16.042 16.042 0 4.391 1.802 8.594 4.984 11.62l0.589 0.526c2.896 2.438 6.552 3.771 10.333 3.776 8.37 0 15.401-6.552 16-14.896 0.438-4.089-0.766-9.255-2.813-15.401zM7.26 27.755c-0.255 0.323-0.651 0.505-1.063 0.505-0.76 0-1.37-0.615-1.375-1.37 0-0.755 0.625-1.375 1.375-1.375 1.151 0.005 1.792 1.344 1.063 2.24zM29.031 22.953c-3.958 5.271-12.417 3.495-17.833 3.75 0 0-0.964 0.057-1.932 0.214 0 0 0.365-0.151 0.833-0.333 3.807-1.323 5.604-1.578 7.917-2.766 4.354-2.214 8.661-7.057 9.557-12.094-1.661 4.849-6.688 9.010-11.266 10.703-3.135 1.156-8.802 2.281-8.802 2.281l-0.229-0.12c-3.859-1.875-3.974-10.229 3.036-12.927 3.068-1.177 6.010-0.531 9.323-1.318 3.542-0.844 7.641-3.5 9.307-6.964 1.865 5.542 4.109 14.214 0.089 19.573z"></path> </g></svg>
@@ -122,14 +128,14 @@
         <p>Bootstrap</p>
       </li>
     </ul>
-    <h3>Sistemas de Mensageria</h3>
+    <h3 data-i18n="skills.messaging">Sistemas de Mensageria</h3>
     <ul>
       <li>
         <svg viewBox="-78.5 0 413 413" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="#ffffff" stroke="#ffffff" stroke-width="0.00413"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M87.9320692,36.714181 C83.382936,32.1427482 77.0364491,29.3196096 69.9808327,29.3196096 C62.9519759,29.3196096 56.6545483,32.1427482 52.1589343,36.714181 L52.0295962,36.714181 C47.4938428,41.2633143 44.6707042,47.614261 44.6707042,54.6431179 C44.6707042,61.6987343 47.4938428,67.9961618 52.0295962,72.5185355 L52.1589343,72.6211139 C56.6545483,77.1702472 62.9519759,79.9666261 69.9808327,79.9666261 C77.0364491,79.9666261 83.382936,77.1702472 87.9320692,72.6211139 L87.9989682,72.5185355 C92.5570213,67.9961618 95.3534002,61.6987343 95.3534002,54.6431179 C95.3534002,47.614261 92.5570213,41.2633143 87.9989682,36.714181 L87.9320692,36.714181 Z M69.9808327,383.353672 C77.0364491,383.353672 83.382936,380.481475 87.9320692,375.985861 L87.9989682,375.852063 C92.5570213,371.365368 95.3534002,365.014422 95.3534002,358.034624 C95.3534002,350.979008 92.5570213,344.654821 87.9989682,340.083388 L87.9320692,340.083388 C83.382936,335.458436 77.0364491,332.662057 69.9808327,332.662057 C62.9519759,332.662057 56.6545483,335.458436 52.1589343,340.083388 L52.0295962,340.083388 C47.4938428,344.654821 44.6707042,350.979008 44.6707042,358.034624 C44.6707042,365.014422 47.4938428,371.365368 52.0295962,375.852063 L52.1589343,375.985861 C56.6545483,380.481475 62.9519759,383.353672 69.9808327,383.353672 Z M207.953367,306.633879 C214.228495,304.988163 219.910452,300.960842 223.375821,294.873031 L223.844114,293.985504 C226.925929,288.209889 227.487881,281.546747 225.842165,275.641794 C224.183069,269.317607 220.106689,263.724849 214.032258,260.2238 L213.679923,259.987423 C207.76159,256.745051 201.018169,256.040381 194.82332,257.712857 C188.525893,259.282754 182.870696,263.488472 179.423166,269.527223 C175.931037,275.507996 175.199608,282.407514 176.872084,288.758461 C178.598078,295.002369 182.634319,300.648647 188.66861,304.176455 L188.70875,304.176455 C194.756421,307.650744 201.60688,308.279595 207.953367,306.633879 Z M95.9688712,180.386512 C89.3146489,173.750129 80.1450235,169.59347 69.9808327,169.59347 C59.8567813,169.59347 50.7094556,173.750129 44.0686131,180.386512 C37.4589901,187.000595 33.38261,196.147921 33.38261,206.285352 C33.38261,216.449543 37.4589901,225.623628 44.0686131,232.31353 C50.7094556,238.896393 59.8567813,243.026292 69.9808327,243.026292 C80.1450235,243.026292 89.3146489,238.896393 95.9688712,232.31353 C102.591874,225.623628 106.668254,216.449543 106.668254,206.285352 C106.668254,196.147921 102.591874,187.000595 95.9688712,180.386512 Z M81.3581257,137.223266 C96.0848295,139.64947 109.335295,146.705086 119.445967,156.896037 L119.526245,156.896037 C121.131822,158.514993 122.701719,160.267747 124.151198,162.042801 L149.434566,147.414216 C146.036096,137.142987 145.879999,126.403464 148.609478,116.341852 C152.217565,102.85501 160.959037,90.7819674 174.062325,83.2045386 L174.494938,82.9458624 C187.455508,75.6003502 202.191132,74.0839725 215.495117,77.6920595 C228.964119,81.2956866 241.11744,90.0772977 248.681489,103.171665 L248.681489,103.198425 C256.209859,116.212514 257.739616,131.157755 254.144909,144.591077 C250.563582,158.069 241.781971,170.222321 228.692063,177.746231 L225.240074,179.788881 L224.887739,179.788881 C212.779016,185.560036 199.461652,186.452023 187.232511,183.23641 C177.188739,180.569369 167.974514,174.976611 160.7628,167.006708 L135.519571,181.590694 C138.418528,189.270702 140.028564,197.55726 140.028564,206.285352 C140.028564,214.986684 138.418528,223.375821 135.519571,231.109347 L160.7628,245.639814 C167.974514,237.567333 177.188739,232.077153 187.232511,229.410112 C200.701514,225.726206 215.637835,227.296103 228.692063,234.900292 L229.526071,235.292766 L229.526071,235.346285 C242.138765,242.972773 250.603721,254.78714 254.144909,268.113424 C257.739616,281.466468 256.209859,296.416169 248.681489,309.457017 L248.226576,310.371304 L248.173057,310.291025 C240.609008,322.86358 228.692063,331.382055 215.535256,334.985683 C202.035034,338.54025 187.103173,337.023873 174.062325,329.526723 L174.062325,329.419684 C160.959037,321.842255 152.217565,309.742453 148.609478,296.286831 C145.879999,286.251978 146.036096,275.507996 149.434566,265.241226 L124.151198,250.65724 C122.701719,252.436754 121.131822,254.10923 119.526245,255.728186 L119.445967,255.804005 C109.335295,265.945896 96.0848295,273.001512 81.3581257,275.351898 L81.3581257,304.568929 C91.8523516,306.763217 101.258354,312.01702 108.630625,319.384832 L108.666305,319.46511 C118.54506,329.290346 124.65963,342.982345 124.65963,358.034624 C124.65963,373.037844 118.54506,386.645104 108.666305,396.523859 L108.630625,396.679957 C98.6849713,406.558712 85.0331117,412.673282 69.9808327,412.673282 C55.0088325,412.673282 41.3391332,406.558712 31.4202388,396.679957 L31.3845593,396.679957 L31.3845593,396.523859 C21.4924245,386.645104 15.3644745,373.037844 15.3644745,358.034624 C15.3644745,342.982345 21.4924245,329.290346 31.3845593,319.46511 L31.3845593,319.384832 L31.4202388,319.384832 C38.7791307,312.01702 48.1985125,306.763217 58.6659788,304.568929 L58.6659788,275.351898 C43.9258952,273.001512 30.7155691,265.945896 20.6182773,255.804005 L20.5112389,255.728186 C7.88962418,243.053052 0,225.623628 0,206.285352 C0,187.000595 7.88962418,169.571171 20.5112389,156.896037 L20.6182773,156.896037 C30.7155691,146.705086 43.9258952,139.64947 58.6659788,137.223266 L58.6659788,108.135573 C48.1985125,105.861006 38.7791307,100.611663 31.4202388,93.2929105 L31.3845593,93.2929105 L31.3845593,93.2126317 C21.4924245,83.2848174 15.3644745,69.6953969 15.3644745,54.6431179 C15.3644745,39.6666577 21.4924245,25.9478991 31.3845593,16.0691441 L31.4202388,16.0200848 C41.3391332,6.11457024 55.0088325,0 69.9808327,0 C85.0331117,0 98.6849713,6.11457024 108.630625,16.0200848 L108.630625,16.0691441 L108.666305,16.0691441 C118.54506,25.9478991 124.65963,39.6666577 124.65963,54.6431179 C124.65963,69.6953969 118.54506,83.2848174 108.666305,93.2126317 L108.630625,93.2929105 C101.258354,100.611663 91.8523516,105.861006 81.3581257,108.135573 L81.3581257,137.223266 Z M223.375821,117.83147 L223.166204,117.519275 C219.674075,111.636621 214.108077,107.716339 207.953367,106.017104 C201.60688,104.344628 194.756421,105.053758 188.66861,108.528047 L188.70875,108.528047 C182.634319,111.975576 178.571319,117.621853 176.872084,123.946041 C175.199608,130.216708 175.931037,137.142987 179.423166,143.177278 L179.539124,143.337836 C183.040173,149.291848 188.606171,153.28795 194.82332,154.906906 C201.071688,156.65966 208.033646,155.928231 214.032258,152.427182 L214.357833,152.271085 C220.262787,148.743276 224.196449,143.177278 225.842165,137.062708 C227.51464,130.76528 226.85011,123.865762 223.375821,117.83147 Z" fill="#ffffff"> </path> </g> </g></svg>
         <p>Apache Kafka</p>
       </li>
     </ul>
-    <h3>Banco de Dados</h3>
+    <h3 data-i18n="skills.databases">Banco de Dados</h3>
     <ul>
       <li>
         <svg viewBox="-8.78 0 70 70" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <metadata> <rdf:rdf> <cc:work> <dc:subject> Data </dc:subject> <dc:identifier> sql-database-generic </dc:identifier> <dc:title> SQL Database (Generic) </dc:title> <dc:format> image/svg+xml </dc:format> <dc:publisher> Amido Limited </dc:publisher> <dc:creator> Richard Slater </dc:creator> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type> </cc:work> </rdf:rdf> </metadata> <path d="m 852.97077,1013.9363 c -6.55238,-0.4723 -13.02857,-2.1216 -17.00034,-4.3296 -2.26232,-1.2576 -3.98589,-2.8032 -4.66223,-4.1807 l -0.4024,-0.8196 0,-25.70807 0,-25.7081 0.31843,-0.6465 c 1.42297,-2.889 5.96432,-5.4935 12.30378,-7.0562 2.15195,-0.5305 5.2586,-1.0588 7.79304,-1.3252 2.58797,-0.2721 9.44765,-0.2307 12.02919,0.073 6.86123,0.8061 12.69967,2.6108 16.29768,5.0377 1.38756,0.9359 2.81137,2.4334 3.29371,3.4642 l 0.41358,0.8838 -0.0354,25.6303 -0.0354,25.63047 -0.33195,0.6744 c -0.18257,0.3709 -0.73406,1.1007 -1.22553,1.6216 -2.99181,3.1715 -9.40919,5.5176 -17.8267,6.5172 -1.71567,0.2038 -9.16916,0.3686 -10.92937,0.2417 z m 12.07501,-22.02839 c -0.0252,-0.0657 -1.00472,-0.93831 -2.17671,-1.93922 -1.17199,-1.00091 -2.18138,-1.86687 -2.24309,-1.92436 -0.0617,-0.0575 0.15481,-0.26106 0.48117,-0.45237 0.32635,-0.19131 0.95163,-0.7235 1.3895,-1.18265 1.2805,-1.34272 1.88466,-3.00131 1.88466,-5.17388 0,-2.1388 -0.65162,-3.8645 -1.95671,-5.1818 -1.31533,-1.3278 -2.82554,-1.8983 -5.02486,-1.8983 -3.39007,0 -5.99368,1.9781 -6.82468,5.1851 -0.28586,1.1031 -0.28432,3.33211 0.003,4.31023 0.74941,2.55136 2.79044,4.40434 5.33062,4.83946 0.8596,0.14724 0.97605,0.21071 1.5621,0.85144 0.34829,0.38078 1.06301,1.14085 1.58827,1.68904 l 0.95501,0.9967 2.53878,0 c 1.39633,0 2.51816,-0.0537 2.49296,-0.11939 z m -8.70653,-7.10848 c -0.61119,-0.31868 -0.84225,-0.56599 -1.19079,-1.27453 -0.26919,-0.54724 -0.31522,-0.85851 -0.31824,-2.15197 -0.003,-1.3143 0.0388,-1.5983 0.31987,-2.169 0.45985,-0.9339 1.09355,-1.376 2.07384,-1.4469 1.36454,-0.099 2.15217,0.5707 2.56498,2.1801 0.50612,1.97321 -0.0504,4.07107 -1.26471,4.76729 -0.63707,0.36527 -1.58737,0.40659 -2.18495,0.095 z m -11.25315,3.66269 c 2.66179,-0.5048 4.1728,-2.0528 4.1728,-4.27495 0,-1.97137 -0.97548,-3.12004 -3.6716,-4.32364 -1.54338,-0.689 -2.10241,-1.1215 -2.10241,-1.6268 0,-0.4188 0.53052,-0.8777 1.14813,-0.993 0.60302,-0.1126 2.20237,0.1652 3.14683,0.5467 l 0.79167,0.3198 0,-1.7524 0,-1.7525 -0.85923,-0.1906 c -0.53103,-0.1178 -1.64689,-0.1885 -2.92137,-0.1849 -1.80528,0 -2.15881,0.044 -2.83818,0.3138 -1.98445,0.7878 -2.92613,2.1298 -2.91107,4.1485 0.0141,1.8898 1.01108,3.06864 3.49227,4.12912 1.46399,0.62572 2.05076,1.10218 2.05076,1.66522 0,1.1965 -1.99362,1.34375 -4.10437,0.30315 -0.57805,-0.28498 -1.09739,-0.54137 -1.1541,-0.56976 -0.0567,-0.0284 -0.10311,0.79023 -0.10311,1.81917 0,1.86239 0.002,1.87137 0.33919,1.99974 1.26979,0.48278 4.07626,0.69787 5.52379,0.42335 z m 30.4308,-1.72766 0,-1.58098 -2.40584,0 -2.40583,0 0,-5.43035 0,-5.4303 -2.13089,0 -2.13088,0 0,7.0113 0,7.01131 4.53672,0 4.53672,0 0,-1.58098 z m -14.84745,-27.70503 c 4.23447,-0.2937 7.4086,-0.8482 10.20178,-1.7821 2.78264,-0.9304 4.42643,-2.0562 4.79413,-3.2834 0.14166,-0.4729 0.13146,-0.6523 -0.0665,-1.1708 -0.88775,-2.3245 -5.84694,-4.1104 -13.42493,-4.8345 -3.24154,-0.3098 -9.13671,-0.2094 -12.22745,0.2081 -4.71604,0.6372 -8.54333,1.8208 -10.2451,3.1683 -3.44251,2.726 0.19793,5.7242 8.66397,7.1354 3.67084,0.6119 8.42674,0.828 12.30414,0.559 z" fill="#ffffff" transform="translate(-830.906 -943.981)"></path> </g></svg>
@@ -152,7 +158,7 @@
         <p>H2 Database</p>
       </li>
     </ul>
-    <h3>Ferramentas e DevOps</h3>
+    <h3 data-i18n="skills.tools">Ferramentas e DevOps</h3>
     <ul>
       <li>
         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" stroke-width="0.00024000000000000003" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.144"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M13.4142 3.82843C12.6332 3.04738 11.3668 3.04738 10.5858 3.82843L9.91421 4.5L11.482 6.06774C11.6472 6.02356 11.8208 6 12 6C13.1046 6 14 6.89543 14 8C14 8.17916 13.9764 8.35282 13.9323 8.51804L15.982 10.5677C16.1472 10.5236 16.3208 10.5 16.5 10.5C17.6046 10.5 18.5 11.3954 18.5 12.5C18.5 13.6046 17.6046 14.5 16.5 14.5C15.3954 14.5 14.5 13.6046 14.5 12.5C14.5 12.3208 14.5236 12.1472 14.5677 11.982L13 10.4142V15.2676C13.5978 15.6134 14 16.2597 14 17C14 18.1046 13.1046 19 12 19C10.8954 19 10 18.1046 10 17C10 16.2597 10.4022 15.6134 11 15.2676V9.73244C10.4022 9.38663 10 8.74028 10 8C10 7.82084 10.0236 7.64718 10.0677 7.48196L8.5 5.91421L3.82843 10.5858C3.04738 11.3668 3.04738 12.6332 3.82843 13.4142L10.5858 20.1716C11.3668 20.9526 12.6332 20.9526 13.4142 20.1716L20.1716 13.4142C20.9526 12.6332 20.9526 11.3668 20.1716 10.5858L13.4142 3.82843ZM9.17157 2.41421C10.7337 0.852115 13.2663 0.852119 14.8284 2.41422L21.5858 9.17157C23.1479 10.7337 23.1479 13.2663 21.5858 14.8284L14.8284 21.5858C13.2663 23.1479 10.7337 23.1479 9.17157 21.5858L2.41421 14.8284C0.852115 13.2663 0.852119 10.7337 2.41422 9.17157L9.17157 2.41421Z" fill="#ffffff"></path> </g></svg>
@@ -200,14 +206,14 @@
   </section>
 
   <section id="workexperience">
-    <h1>Experiência Profissional</h1>
+    <h1 data-i18n="experience.title">Experiência Profissional</h1>
     <div class="timeline-container">
       <div class="timeline-item">
         <div class="timeline-content">
-          <h2>Estagiário de Desenvolvimento & Dados</h2>
-          <h3>Vivo (Telefônica Brasil)</h3>
-          <h4>09/2025 - Presente</h4>
-          <p>
+          <h2 data-i18n="experience.job1.role">Estagiário de Desenvolvimento & Dados</h2>
+          <h3 data-i18n="experience.job1.company">Vivo (Telefônica Brasil)</h3>
+          <h4 data-i18n="experience.job1.period">09/2025 - Presente</h4>
+          <p data-i18n="experience.job1.desc">
             Desenvolvimento de soluções de automação e inteligência de dados, com foco em performance e modernização de processos críticos.
             <br><br>
             <strong>• Performance:</strong> Otimização extrema de aplicações, alcançando <strong>98% de redução</strong> no tempo de resposta (de 45s para 1s).
@@ -223,10 +229,10 @@
 
       <div class="timeline-item">
         <div class="timeline-content">
-          <h2>Estagiário Suporte Técnico & Infraestrutura</h2>
-          <h3>HW Center Produtos Hospitalares</h3>
-          <h4>07/2024 - 12/2024</h4>
-          <p>
+          <h2 data-i18n="experience.job2.role">Estagiário Suporte Técnico & Infraestrutura</h2>
+          <h3 data-i18n="experience.job2.company">HW Center Produtos Hospitalares</h3>
+          <h4 data-i18n="experience.job2.period">07/2024 - 12/2024</h4>
+          <p data-i18n="experience.job2.desc">
             Responsável pelo diagnóstico e resolução de incidentes em infraestrutura de TI, garantindo a disponibilidade dos sistemas para o usuário final. 
             Desenvolvimento de soft skills essenciais como comunicação técnica, priorização de chamados e troubleshooting avançado. 
           </p>
@@ -236,20 +242,20 @@
   </section>
 
   <section id="projects" class="background">
-    <h1>Principais Projetos</h1>
+    <h1 data-i18n="projects.title">Principais Projetos</h1>
     <ul>
       <li>
         <div>
           <img src="files/AutoGrid.png">
-          <p class="title">AutoGrid - Sistema de Catálogo Distribuído</p>
-          <p class="text">
+          <p class="title" data-i18n="projects.p1.title">AutoGrid - Sistema de Catálogo Distribuído</p>
+          <p class="text" data-i18n="projects.p1.desc">
             Sistema de alta performance desenvolvido com Java 21 e Spring Boot. A arquitetura utiliza Apache Kafka para processamento assíncrono de eventos, permitindo que 
             novos veículos apareçam como notificações em tempo real via WebSockets, sem necessidade de recarregar a página. Conta ainda com segurança via Spring Security e 
             infraestrutura dockerizada. 
           </p>
         </div>
         <div>
-          <a href="https://github.com/agsjohn/AutoGrid_WebSite" target="_blank">Ver no GitHub</a>
+          <a href="https://github.com/agsjohn/AutoGrid_WebSite" target="_blank" data-i18n="projects.viewGithub">Ver no GitHub</a>
           <div class="tecnologies">
             <p>Java</p>
             <p>Spring Boot (Security, Data JPA)</p>
@@ -269,14 +275,14 @@
       <li>
         <div>
           <img src="files/FuriaChatBot.png">
-          <p class="title">FURIA Hub - Mobile & CI/CD</p>
-          <p class="text">
+          <p class="title" data-i18n="projects.p2.title">FURIA Hub - Mobile & CI/CD</p>
+          <p class="text" data-i18n="projects.p2.desc">
             Aplicação móvel integrada a pipelines de DevOps. O destaque técnico é a implementação de CI/CD com GitHub Actions, que automatiza testes e build a cada 
             atualização. O app consome dados estruturados (JSON) para entregar estatísticas de E-Sports. 
           </p>
         </div>
         <div>
-          <a href="https://github.com/agsjohn/desafio_FURIA" target="_blank">Ver no GitHub</a>
+          <a href="https://github.com/agsjohn/desafio_FURIA" target="_blank" data-i18n="projects.viewGithub">Ver no GitHub</a>
           <div class="tecnologies">
             <p>Flutter</p>
             <p>Dart</p>
@@ -290,11 +296,11 @@
       <li>
         <div>
           <img src="files/GerenciadorDe Fichas.gif">
-          <p class="title">Gerenciador de Fichas de RPG</p>
-          <p class="text">O Gerenciador de Fichas de RPG é uma aplicação web completa, desenvolvida para facilitar a administração de campanhas de RPG de mesa. A plataforma permite que o Mestre da campanha monitore e incremente os usos de atributos e perícias dos personagens em tempo real, enquanto os jogadores têm uma visão clara e dinâmica de suas fichas.</p>
+          <p class="title" data-i18n="projects.p3.title">Gerenciador de Fichas de RPG</p>
+          <p class="text" data-i18n="projects.p3.desc">O Gerenciador de Fichas de RPG é uma aplicação web completa, desenvolvida para facilitar a administração de campanhas de RPG de mesa. A plataforma permite que o Mestre da campanha monitore e incremente os usos de atributos e perícias dos personagens em tempo real, enquanto os jogadores têm uma visão clara e dinâmica de suas fichas.</p>
         </div>
         <div>
-          <a href="https://github.com/agsjohn/gerenciador-rpg" target="_blank">Ver no GitHub</a>
+          <a href="https://github.com/agsjohn/gerenciador-rpg" target="_blank" data-i18n="projects.viewGithub">Ver no GitHub</a>
           <div class="tecnologies">
             <p>Svelte</p>
             <p>HTML</p>
@@ -310,14 +316,14 @@
       <li>
         <div>
           <img src="files/TaskBridge.png">
-          <p class="title">TaskBridge - Gestão Desktop</p>
-          <p class="text">
+          <p class="title" data-i18n="projects.p4.title">TaskBridge - Gestão Desktop</p>
+          <p class="text" data-i18n="projects.p4.desc">
             Sistema de gerenciamento focado em Integridade de Dados e POO. Implementa um CRUD complexo com persistência em MySQL e arquitetura em camadas (MVC), garantindo 
             organização e manutenibilidade do código. 
           </p>
         </div>
         <div>
-          <a href="https://github.com/agsjohn/TaskBridge" target="_blank">Ver no GitHub</a>
+          <a href="https://github.com/agsjohn/TaskBridge" target="_blank" data-i18n="projects.viewGithub">Ver no GitHub</a>
           <div class="tecnologies">
             <p>Java</p>
             <p>MySQL</p>
@@ -330,7 +336,7 @@
   </section>
 
   <section id="education">
-    <h1>Formação Acadêmica</h1>
+    <h1 data-i18n="education.title">Formação Acadêmica</h1>
     <div class="education-container">
       
       <div class="education-item">
@@ -369,9 +375,9 @@
           </svg>
         </div>
         <div class="education-content">
-          <h2>Bacharelado em Ciência da Computação</h2>
-          <h3>UniRitter</h3>
-          <p class="education-details">5º semestre &bull; Conclusão prevista: Dez/2027</p>
+          <h2 data-i18n="education.item1.title">Bacharelado em Ciência da Computação</h2>
+          <h3 data-i18n="education.item1.institution">UniRitter</h3>
+          <p class="education-details" data-i18n="education.item1.details">6º semestre &bull; Conclusão prevista: Dez/2027</p>
         </div>
       </div>
       
@@ -433,16 +439,16 @@
           </svg>
         </div>
         <div class="education-content">
-          <h2>Técnico em Informática</h2>
-          <h3>Escola Técnica José César de Mesquita</h3>
-          <p class="education-details">Mar/2023 - Dez/2024 &bull; Concluído</p>
+          <h2 data-i18n="education.item2.title">Técnico em Informática</h2>
+          <h3 data-i18n="education.item2.institution">Escola Técnica José César de Mesquita</h3>
+          <p class="education-details" data-i18n="education.item2.details">Mar/2023 - Dez/2024 &bull; Concluído</p>
         </div>
       </div>
     </div>
   </section>
 
   <section id="contact" class="background">
-    <h1>Entre em contato</h1>
+    <h1 data-i18n="contact.title">Entre em contato</h1>
     <div id="contactDiv">
       <ul>
         <li>
@@ -470,7 +476,7 @@
           <img src="files/whatsapp.png">
           <div>
             <p>WhatsApp</p>
-            <a href="https://wa.me/+5551999145530" target="_blank">Me chame no Whats</a>
+            <a href="https://wa.me/+5551999145530" target="_blank" data-i18n="contact.whatsapp">Me chame no Whats</a>
           </div>
         </li>
       </ul>
@@ -486,7 +492,7 @@
   <footer id="mainFooter">
     <div class="footerName">
       <p class="footerPrincipalName">João Vitor Martins</p>
-      <p>Desenvolvedor Backend e Mobile</p>
+      <p data-i18n="footer.role">Desenvolvedor Backend e Mobile</p>
     </div>
     <div class="icons">
       <div>
@@ -496,9 +502,10 @@
       <a class="icon gmailIcon" href="mailto:joaovitormds03@gmail.com" target="_self"></a>
     </div>
     <div class="copyright">
-      <p>&copy; 2026 João Vitor Martins. All rights reserved. </p>
+      <p data-i18n="footer.rights">&copy; 2026 João Vitor Martins. All rights reserved. </p>
     </div>
   </footer>  
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
