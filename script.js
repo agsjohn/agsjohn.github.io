@@ -77,10 +77,31 @@ document.addEventListener('DOMContentLoaded', () => {
         localStorage.setItem('language', lang);
     }
 
+    let isLangSwitching = false;
+
     function toggleLanguage() {
+        if (isLangSwitching) return;
+        isLangSwitching = true;
+
         const currentLang = localStorage.getItem('language') || 'pt';
         const newLang = currentLang === 'pt' ? 'en' : 'pt';
-        applyLanguage(newLang);
+
+        // Dispara animação de rotação (flip) nos botões e fade out no texto
+        langToggleButtons.forEach(button => button.classList.add('lang-flipping'));
+        body.classList.add('lang-transition-active', 'lang-changing');
+
+        // No meio da transição (quando o botão está de lado e o texto esmaecido), troca os textos
+        setTimeout(() => {
+            applyLanguage(newLang);
+            body.classList.remove('lang-changing');
+        }, 160);
+
+        // Finaliza a animação e reseta os estados
+        setTimeout(() => {
+            body.classList.remove('lang-transition-active');
+            langToggleButtons.forEach(button => button.classList.remove('lang-flipping'));
+            isLangSwitching = false;
+        }, 340);
     }
 
     const savedLanguage = localStorage.getItem('language') || 'pt';

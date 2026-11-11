@@ -314,6 +314,46 @@ header a{
   box-shadow: 0 0 1rem var(--secondary-color);
 }
 
+/* Animações de alternância de idioma */
+@keyframes langBtnFlip {
+  0% {
+    transform: rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: rotateY(90deg) scale(0.88);
+    box-shadow: 0 0 1.2rem var(--secondary-color);
+  }
+  100% {
+    transform: rotateY(0deg) scale(1);
+  }
+}
+
+.langToggle.lang-flipping {
+  animation: langBtnFlip 0.32s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.lang-transition-active [data-i18n] {
+  transition: opacity 0.16s ease-in-out, filter 0.16s ease-in-out !important;
+}
+
+body.lang-changing [data-i18n] {
+  opacity: 0.15;
+  filter: blur(0.8px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .langToggle.lang-flipping {
+    animation: none;
+  }
+  body.lang-transition-active [data-i18n] {
+    transition: none !important;
+  }
+  body.lang-changing [data-i18n] {
+    opacity: 1;
+    filter: none;
+  }
+}
+
 .bodyWhite #mainHeader svg{
   filter: invert();
 }
