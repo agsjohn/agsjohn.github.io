@@ -257,7 +257,7 @@ header a{
   height: 1.8rem;
   border-radius: 50%;
   cursor: pointer;
-  background-color: transparent;
+  background-color: var(--main-color);
   color: var(--oposite-color);
   border: 0.12rem var(--oposite-color) solid;
   transition: 0.3s ease;
@@ -433,18 +433,13 @@ body.lang-changing [data-i18n] {
   left: 1rem;
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.8rem;
   z-index: 1002;
 }
 
 .slide-menu-buttons button {
   position: static;
-}
-
-.slide-menu button{
-  position: fixed;
-  top: 1rem;
-  left: 1rem;
+  margin: 0;
 }
 
 .overlay{
